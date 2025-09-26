@@ -1,0 +1,46 @@
+{% extends "user_panel_template.html" %}
+
+
+{% block content %}
+             <div class="box-head">
+                  <h3>حذف حساب</h3>
+                </div>
+                <div class="security-details">
+                  <h5 class="font-light mt-3">
+                    سلام <span style="color:blue;"> {{name}} {{family}}</span>
+                  </h5>
+                  <p class="font-light mt-1">
+                    ما متاسفیم که می شنوم که می خواهید حساب را حذف کنید.
+                  </p>
+                </div>
+
+                <div class="security-details-1 mb-0">
+                  <div class="page-title">
+                    <h4 class="fw-bold">توجه</h4>
+                  </div>
+                  <p class="font-light">
+                    با حذف حساب کاربری، نمایه، تنظیمات شخصی و سایر اطلاعات مرتبط
+                    شما برای همیشه حذف می شود. پس از حذف حساب کاربری شما از
+                    سیستم خارج می شوید و نمی توانید دوباره وارد شوید.
+                  </p>
+
+                  <p class="font-light mb-4">
+                    اگر بیانیه بالا را خواندید و با آن موافق هستید و همچنان می
+                    خواهید حساب خود را حذف کنید، روی دکمه زیر کلیک کنید
+                  </p>
+
+                  <a
+                    class="btn btn-solid-default btn-sm fw-bold rounded"
+                    href="{% url "accounts:delete_user" %}"
+                  >
+                    حذف حساب
+                </a>
+                </div>
+              </div>
+
+
+{% endblock content %}
+
+
+
+

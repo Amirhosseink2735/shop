@@ -1,0 +1,100 @@
+    {% load humanize %}
+    {% if products %}
+    
+    <!-- Compare Section Start -->
+    <section class="section-b-space">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="comparemodal-body">
+              <div class="table-wrapper table-responsive ratio_asos">
+                <table class="table table-striped-1">
+                  <tbody>
+                    <tr class="table-product-details">
+                      <td></td>
+                        {% for product in products %}
+                      <td>
+                        <div class="product-box">
+                          <div class="product-image">
+                            <a
+                              class="w-100 blur-up lazyload"
+                              href="javascript:void(0)"
+                            >
+                              <img
+                                src="{{media_url}}{{product.image_name}}"
+                                class="img-fluid bg-img blur-up lazyload"
+                                alt=""
+                              />
+                            </a>
+                          </div>
+                          <div class="product-details">
+                            <div>
+                              <a href="javascript:void(0)">
+                                <h6 class="fw-bold">
+                                  {{product.product_name}}
+                                </h6>
+                              </a>
+                            </div>
+
+                            <div class="price-details mt-2">
+                              <h6 class="font-green">
+                                {{product.get_price_by_discount}} ت
+  
+                              </h6>
+                            </div>
+                            <div>
+                                <a onclick="delete_fav({{product.id}})" href="#" style="color:red;">حذف</a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      {% endfor %}
+
+                    </tr>
+
+                    <tr class="table-cart-button">
+                      <td></td>
+                      {% for product in products %}
+                      <td>
+                        {% if product.get_number_product %}
+                        <a href="#" onclick="addshopcart({{product.id}},1)" class="btn btn-solid-blue"
+                          >سبد خرید +</a
+                        >
+                        {% else %}
+                        <span style="color:red;">ناموجود</span>
+                        {% endif %}
+                      </td>
+                      {% endfor %}
+
+                    </tr>
+
+
+                    {% for feature in features %}
+                    <tr>
+                      <th>{{feature}}</th>
+                {% for product in products %}
+                <td style="text-align: center;" >    
+                {% for item  in product.product_feature.all %}
+                        {% if item.feature == feature %}
+                     <span> {{item.filter_value.value_title}}</span>
+                        {% endif %}
+                    {% endfor %}
+                    </td>
+                
+              {% endfor %}
+
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Compare Section End -->
+{% else %}
+    <span style="color:red;">محصولی برای مقایسه وجود ندارد</span>
+
+{% endif %}

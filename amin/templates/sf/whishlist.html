@@ -1,0 +1,126 @@
+{% extends "main_template.html" %}
+
+{% load render_partial %}
+
+{% block content %}
+
+    <!-- mobile fix menu start -->
+    <div class="mobile-menu d-sm-none">
+      <ul>
+        <li>
+          <a href="index.html">
+            <i data-feather="home"></i>
+            <span>خانه</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class="toggle-category">
+            <i data-feather="align-justify"></i>
+            <span>دسته بندی</span>
+          </a>
+        </li>
+        <li>
+          <a href="cart.html">
+            <i data-feather="shopping-bag"></i>
+            <span>سبد خرید</span>
+          </a>
+        </li>
+        <li>
+          <a href="wishlist.html" class="active">
+            <i data-feather="heart"></i>
+            <span>علاقه مندیها</span>
+          </a>
+        </li>
+        <li>
+          <a href="user-dashboard.html">
+            <i data-feather="user"></i>
+            <span>حساب</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- mobile fix menu end -->
+
+    <!-- Breadcrumb section start -->
+    <section class="breadcrumb-section section-b-space">
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h3>علاقه مندیها</h3>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="index.html">
+                    <i class="fas fa-home"></i>
+                  </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  علاقه مندیها
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Breadcrumb section end -->
+
+    <div id="show_wish_list">
+      {% render_partial "sf:show_wish_list" %}
+    </div>
+
+    <!-- Subscribe Section Start -->
+    <section class="subscribe-section section-b-space">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-6">
+            <div class="subscribe-details">
+              <h2 class="mb-3">اخبار ما را دنبال کنید</h2>
+              <h6 class="font-light">
+                ما را دنبال کنید وخبرنامه های ما را دریافت کنید تا از اخبار جدید
+                و محصولات فوقالعاده خبردار شوید.
+              </h6>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-md-0 mt-3">
+            <div class="subsribe-input">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control subscribe-input"
+                  placeholder="آدرس"
+                  ایمیل
+                  شما
+                />
+                <button class="btn btn-solid-default" type="button">
+                  ارسال
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Subscribe Section End -->
+
+
+
+
+{% endblock content %}
+
+
+
+

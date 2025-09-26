@@ -1,0 +1,7 @@
+                           
+                           
+                               {% for product in products %}
+                           <li>
+                               <a href="{% url "pro:product_detail" slug=product.slug %}">{{product.product_name}}</a>
+                            </li>
+                            {% endfor %}

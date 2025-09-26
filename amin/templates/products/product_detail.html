@@ -1,0 +1,1026 @@
+{% extends "main_template.html" %}
+
+
+
+
+{% block content %}
+
+
+{% load humanize %}
+
+    <!-- Breadcrumb section start -->
+    <section class="breadcrumb-section section-b-space">
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h3>محصول</h3>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="{% url "main:index" %}">
+                    <i class="fas fa-home"></i>
+                  </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  محصول پکیج
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Breadcrumb section end -->
+
+    <!-- Shop Section start -->
+    <section>
+      <div class="container">
+        <div class="row gx-4 gy-5">
+          <div class="col-lg-12 col-12">
+            <div class="details-items">
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="degree-section">
+                    <div class="details-image ratio_asos">
+                      <div>
+                        <div class="product-image-tag">
+                          <img
+                            src="assets/images/fashion/1.jpg"
+                            id="zoom_01"
+                            data-zoom-image="{{media_url}}images/fashion/1.jpg"
+                            class="img-fluid w-100 image_zoom_cls-0 blur-up lazyload"
+                            alt=""
+                          />
+
+
+                        </div>
+                      </div>
+                      <div>
+                        <div class="product-image-tag">
+                          <img
+                            src=" assets/images/fashion/2.jpg"
+                            id="zoom_02"
+                            data-zoom-image="{{media_url}}images/fashion/2.jpg"
+                            class="img-fluid w-100 image_zoom_cls-1 blur-up lazyload"
+                            alt=""
+                          />
+
+                          <div class="label-tag">
+                            <h6>
+                              <i class="fas fa-star"></i> 4.8
+                              <span class="font-light">120</span>
+                            </h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="product-image-tag">
+                          <img
+                            src=" assets/images/fashion/3.jpg"
+                            id="zoom_03"
+                            data-zoom-image="{{media_url}}images/fashion/3.jpg"
+                            class="img-fluid w-100 image_zoom_cls-2 blur-up lazyload"
+                            alt=""
+                          />
+
+                          <div class="label-tag">
+                            <h6>
+                              <i class="fas fa-star"></i> 4.8
+                              <span class="font-light">120</span>
+                            </h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="product-image-tag">
+                          <img
+                            src=" assets/images/fashion/4.jpg"
+                            id="zoom_04"
+                            data-zoom-image="{{media_url}}images/fashion/4.jpg"
+                            class="img-fluid w-100 image_zoom_cls-3 blur-up lazyload"
+                            alt=""
+                          />
+
+   
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="details-image-option black-slide mt-4 rounded">
+                      <div>
+                        <img
+                          src="{{media_url}}{{product.image_name}}"
+                          class="img-fluid blur-up lazyload"
+                          alt=""
+                        />
+                      </div>
+                      {% for fhoto in p_gallery %}
+                      <div>
+                        
+                        <img
+                          src="{{fhoto.image_name}}"
+                          class="img-fluid blur-up lazyload"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <img
+                          src="{{fhoto.image_name}}"
+                          class="img-fluid blur-up lazyload"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <img
+                          src="{{fhoto.image_name}}"
+                          class="img-fluid blur-up lazyload"
+                          alt=""
+                        />
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="cloth-details-size">
+
+
+                    <div class="details-image-concept">
+                      <h2>{{product.product_name}}</h2>
+                    </div>
+
+
+                  {% if product.get_number_product <= 0 %}
+
+                      <span style="color:red" >ناموجود</span>
+                  {% else %}
+                    {% if product.price > product.get_price_by_discount %}
+                    <del><h3 class="price-detail">
+                     {{product.price|intcomma}}تومان
+                    </h3></del>
+
+                    <h3 class="price-detail">
+                     {{product.get_price_by_discount|intcomma}}تومان
+                    </h3>
+
+                    {% else %}
+                  
+                    
+                    <h3 class="price-detail">
+                     {% comment "" %}32,900 ت <del>459,000 ت</del><span>55% تخفیف</span>{% endcomment %} 
+                     {{product.price|intcomma}}تومان
+                    </h3>
+                    {% endif %}
+                  {% endif %}
+
+                    <div class="color-image">
+                      <div class="image-select">
+                        
+                        <h5></h5>
+                        <ul class="image-section">
+                          <li>
+                            <a href="javascript:void(0)">
+                              <img
+                                src="{{media_url}}{{product.image_name}}"
+                                class="img-fluid blur-up lazyload"
+                                alt=""
+                              />
+                            </a>
+                          </li>
+                          <li>
+                            <a href="javascript:void(0)">
+                              <img
+                                src="assets/images/fashion/product/front/6.jpg"
+                                class="img-fluid blur-up lazyload"
+                                alt=""
+                              />
+                            </a>
+                          </li>
+                          <li>
+                            <a href="javascript:void(0)">
+                              <img
+                                src="assets/images/fashion/product/front/7.jpg"
+                                class="img-fluid blur-up lazyload"
+                                alt=""
+                              />
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div
+                      id="selectSize"
+                      class="addeffect-section product-description border-product"
+                    >
+
+                      
+
+                      
+
+
+                      
+
+                      <h6 class="product-title product-title-2 d-block">
+                        تعداد
+                      </h6>
+
+                      <div class="qty-box">
+                        <div class="input-group">
+                          <span class="input-group-prepend">
+                            <button
+                              type="button"
+                              class="btn quantity-left-minus"
+                              data-type="minus"
+                              data-field=""
+
+                            >
+                              <i class="fas fa-minus"></i>
+                            </button>
+                          </span>
+                          <input
+                            type="text"
+                            name="quantity"
+                            class="form-control input-number"
+                            value="1"
+                            id="product_input"
+                          />
+                          <span class="input-group-prepend">
+                            <button
+                              type="button"
+                              class="btn quantity-right-plus"
+                              data-type="plus"
+                              data-field=""
+                            >
+                              <i class="fas fa-plus"></i>
+                            </button>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div  class="product-buttons">
+                      <a href="#" onclick="add_to_favorite({{product.id}})" class="btn btn-solid">
+                        <i class="fa fa-bookmark fz-16 me-2"  ></i>
+                        <span>علاقه مندیها</span>
+                      </a>
+                      <a
+                        onclick="addshopcart({{product.id}},0)"
+                        href="#"
+                        id="cartEffect"
+                        class="btn btn-solid hover-solid btn-animation"
+                      >
+                        <i  class="fa fa-shopping-cart"></i>
+                        <span  >سبد خرید</span>
+                      </a>
+                    </div>
+
+                    <ul class="product-count shipping-order">
+                      <li>
+                        <img
+                          src="{{media_url}}images/gif/truck.png"
+                          class="img-fluid blur-up lazyload"
+                          alt="image"
+                        />
+                        <span class="lang"
+                          >ارسال رایگان برای سفارش های بالای 25,000 ت</span
+                        >
+                      </li>
+                    </ul>
+
+                    <div class="mt-2 mt-md-3 border-product">
+                      <h6 class="product-title hurry-title d-block">
+                        {% if product.get_number_product %}
+                        عجله کنید! <span>{{product.get_number_product}} عدد</span> در انبار باقیست
+                      </h6>
+                      {% else %}
+
+
+                      {% endif %}
+
+                    </div>
+
+
+                    {% comment "" %}
+                    <div class="image-bundle border-product">
+                      <h6 class="product-title">
+                        معمولا با هم خریداری شده اند
+                      </h6>{% endcomment %}
+
+                      {% comment "" %}
+                      <ul class="checkbox-details">
+                        <li class="checkbox-list">
+                          <div class="form-check user-checkbox ps-0">
+                            <input
+                              class="checkbox_animated check-it"
+                              type="checkbox"
+                              value=""
+                              id="flexCheckDefault3"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="flexCheckDefault3"
+                              >محصول1_آهنگ ترکیب رنگ
+                              <span class="fw-bolder">64,000 ت</span>
+                            </label>
+                          </div>
+                        </li>
+
+                        <li class="checkbox-list">
+                          <div class="form-check user-checkbox ps-0">
+                            <input
+                              class="checkbox_animated check-it"
+                              type="checkbox"
+                              value=""
+                              id="flexCheckDefault1"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="flexCheckDefault1"
+                              >محصول2_شلوار کاملا زنانه
+                              <span class="fw-bolder">24,000 ت</span>
+                            </label>
+                          </div>
+                        </li>
+
+                        <li class="checkbox-list">
+                          <div class="form-check user-checkbox ps-0">
+                            <input
+                              class="checkbox_animated check-it"
+                              type="checkbox"
+                              value=""
+                              id="flexCheckDefault2"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="flexCheckDefault2"
+                              >محصول3- لباس دامن کاملا زنانه
+                              <span class="fw-bolder">85,000 ت</span>
+                            </label>
+                          </div>
+                        </li>
+
+                        <li>
+                          <a
+                            class="btn default-light-theme default-theme default-theme-2 outline-button rounded"
+                            href="cart.html"
+                            >این بسته را بخرید</a
+                          >
+                        </li>
+                      </ul>
+                      {% endcomment %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="cloth-review">
+              <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <button
+                    class="nav-link active"
+                    id="nav-home-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#desc"
+                    type="button"
+                  >
+                    توضیحات
+                  </button>
+
+                  <button
+                    class="nav-link"
+                    id="nav-speci-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#speci"
+                    type="button"
+                  >
+                    مشخصات فنی
+                  </button>
+                  {% comment "" %}
+                  <button
+                    class="nav-link"
+                    id="nav-size-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#nav-guide"
+                    type="button"
+                  >
+                    راهنمای اندازه گیری
+                  </button>
+                  {% endcomment %}
+
+
+                </div>
+              </nav>
+
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="desc">
+                  <div class="shipping-chart">
+                    <div class="part">
+                      <h4 class="inner-title mb-2">
+                        توضیحات  درباره {{product.product_name}}
+                      </h4>
+                      <p class="font-light">
+                      {{product.description}}
+                      </p>
+                    </div>
+
+                   {% comment "" %}<div class="row g-3 align-items-center">
+                      <div class="col-lg-8">
+                        <p class="font-light">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                          چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون
+                          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                          برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع
+                          با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی
+                          در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه
+                          و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را
+                          برای طراحان.
+                        </p>
+
+                        <div class="part mt-3">
+                          <h5 class="inner-title mb-2">پارچه:</h5>
+                          <p class="font-light">
+                            ابریشم هنری توسط الیاف مصنوعی مانند ابریشم مصنوعی
+                            تولید می شود. وزن آن سبک است و برای راحتی در تابستان
+                            روی پوست نرم است.
+                          </p>
+                          <p class="font-light">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+                            صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها
+                            و متون بلکه روزنامه و مجله در ستون
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-4">
+                        <img
+                          src="assets/images/fashion/slider/1.jpg"
+                          class="img-fluid rounded blur-up lazyload"
+                          alt=""
+                        />
+                      </div>
+
+                      <div class="col-lg-8 order-lg-2 mt-4">
+                        <p class="font-light">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                          چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون
+                          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                          برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع
+                          با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی
+                          در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه
+                          و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را
+                          برای طراحان.
+                        </p>
+                        <div class="part mt-3">
+                          <p class="font-light">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+                            صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها
+                            و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
+                            لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
+                            کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می
+                            باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و
+                            آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با
+                            نرم افزارها شناخت بیشتری را برای طراحان رایانه ای
+                            علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی
+                            ایجاد کرد.
+                          </p>
+                        </div>
+                      </div>
+                      {% endcomment %} 
+
+                      <div class="col-lg-4 order-lg-0 mt-4">
+                        <img
+                          src="assets/images/fashion/slider/2.jpg"
+                          class="img-fluid rounded blur-up lazyload"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="speci">
+                  <div class="pro mb-4">
+
+                    <div class="table-responsive">
+                      <table class="table table-part">
+                        {% for f in feature  %}
+                        <tr>
+                          <th>{{f.feature}}</th>
+                          <td>{{f.value}}</td>
+                        </tr>
+                        {% endfor %}
+ 
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade overflow-auto" id="nav-guide">
+                  <div class="table-responsive">
+                    <table class="table table-pane mb-0">
+                      <tbody>
+                        <tr class="bg-color">
+                          <th class="my-2">اندازه های آمریکایی</th>
+                          <td>6</td>
+                          <td>6.5</td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td>8.5</td>
+                          <td>9</td>
+                          <td>9.5</td>
+                          <td>10</td>
+                          <td>10.5</td>
+                          <td>11</td>
+                        </tr>
+
+                        <tr>
+                          <th>اندازه های اروپایی</th>
+                          <td>39</td>
+                          <td>39</td>
+                          <td>40</td>
+                          <td>40-41</td>
+                          <td>41</td>
+                          <td>41-42</td>
+                          <td>42</td>
+                          <td>42-43</td>
+                          <td>43</td>
+                          <td>43-44</td>
+                        </tr>
+
+                        <tr class="bg-color">
+                          <th>اندازه های انگلستانی</th>
+                          <td>5.5</td>
+                          <td>6</td>
+                          <td>6.5</td>
+                          <td>7</td>
+                          <td>7.5</td>
+                          <td>8</td>
+                          <td>8.5</td>
+                          <td>9</td>
+                          <td>10.5</td>
+                          <td>11</td>
+                        </tr>
+
+                        <tr>
+                          <th>اینچ</th>
+                          <td>9.25"</td>
+                          <td>9.5"</td>
+                          <td>9.625"</td>
+                          <td>9.75"</td>
+                          <td>9.9735"</td>
+                          <td>10.125"</td>
+                          <td>10.25"</td>
+                          <td>10.5"</td>
+                          <td>10.765"</td>
+                          <td>10.85</td>
+                        </tr>
+
+                        <tr class="bg-color">
+                          <th>سانتی متر</th>
+                          <td>23.5</td>
+                          <td>24.1</td>
+                          <td>24.4</td>
+                          <td>25.4</td>
+                          <td>25.7</td>
+                          <td>26</td>
+                          <td>26.7</td>
+                          <td>27</td>
+                          <td>27.3</td>
+                          <td>27.5</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="question">
+                  <div class="question-answer">
+                    <ul>
+                      <li>
+                        <div class="que">
+                          <i class="fas fa-question"></i>
+                          <div class="que-details">
+                            <h6>آیا با تمام قالب های وردپرس سازگار است؟</h6>
+                            <p class="font-light">
+                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+                              صنعت چاپ و با استفاده از طراحان گرافیک است.
+                              چاپگرها و متون بلکه روزنامه و مجله در ستون و
+                              سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
+                              مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
+                              کاربردی می باشد. کتابهای زیادی در شصت و سه درصد
+                              گذشته، حال و آینده.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="que">
+                          <i class="fas fa-question"></i>
+                          <div class="que-details">
+                            <h6>چگونه می توانم افزونه کامل را امتحان کنم؟</h6>
+                            <p class="font-light">
+                              سازگاری با همه تم ها غیرممکن است، زیرا تعداد آنها
+                              بسیار زیاد است، اما به طور کلی اگر تم ها بر اساس
+                              دستورالعمل های وردپرس و ووکامرس توسعه داده شوند،
+                              افزونه های YITH با آنها سازگار هستند..
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="que">
+                          <i class="fas fa-question"></i>
+                          <div class="que-details">
+                            <h6>آیا با تمام قالب های وردپرس سازگار است؟</h6>
+                            <p class="font-light">
+                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+                              صنعت چاپ و با استفاده از طراحان گرافیک است.
+                              چاپگرها و متون بلکه روزنامه و مجله در ستون و
+                              سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
+                              مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
+                              کاربردی می باشد. کتابهای زیادی در شصت و سه درصد
+                              گذشته، حال و آینده.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="review">
+                  <div class="row g-4">
+                    <div class="col-lg-4">
+                      <div class="customer-rating">
+                        <h2>نظرات مشتریان</h2>
+                        <ul class="rating my-2 d-inline-block">
+                          <li>
+                            <i class="fas fa-star theme-color"></i>
+                          </li>
+                          <li>
+                            <i class="fas fa-star theme-color"></i>
+                          </li>
+                          <li>
+                            <i class="fas fa-star theme-color"></i>
+                          </li>
+                          <li>
+                            <i class="fas fa-star"></i>
+                          </li>
+                          <li>
+                            <i class="fas fa-star"></i>
+                          </li>
+                        </ul>
+
+                        <div class="global-rating">
+                          <h5 class="font-light">رتبه 82</h5>
+                        </div>
+
+                        <ul class="rating-progess">
+                          <li>
+                            <h5 class="me-3">5 ستاره</h5>
+                            <div class="progress">
+                              <div
+                                class="progress-bar"
+                                role="progressbar"
+                                style="width: 78%"
+                                aria-valuenow="50"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                            <h5 class="ms-3">78%</h5>
+                          </li>
+                          <li>
+                            <h5 class="me-3">4 ستاره</h5>
+                            <div class="progress">
+                              <div
+                                class="progress-bar"
+                                role="progressbar"
+                                style="width: 62%"
+                                aria-valuenow="50"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                            <h5 class="ms-3">62%</h5>
+                          </li>
+                          <li>
+                            <h5 class="me-3">3 ستاره</h5>
+                            <div class="progress">
+                              <div
+                                class="progress-bar"
+                                role="progressbar"
+                                style="width: 44%"
+                                aria-valuenow="50"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                            <h5 class="ms-3">44%</h5>
+                          </li>
+                          <li>
+                            <h5 class="me-3">2 ستاره</h5>
+                            <div class="progress">
+                              <div
+                                class="progress-bar"
+                                role="progressbar"
+                                style="width: 30%"
+                                aria-valuenow="50"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                            <h5 class="ms-3">30%</h5>
+                          </li>
+                          <li>
+                            <h5 class="me-3">1 ستاره</h5>
+                            <div class="progress">
+                              <div
+                                class="progress-bar"
+                                role="progressbar"
+                                style="width: 18%"
+                                aria-valuenow="50"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                            <h5 class="ms-3">18%</h5>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-8">
+                      <p class="d-inline-block me-2">رتبه بند</p>
+                      <ul class="rating mb-3 d-inline-block">
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                      </ul>
+                      <div class="review-box">
+                        <form class="row g-4">
+                          <div class="col-12 col-md-6">
+                            <label class="mb-1" for="name">نام</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="name"
+                              placeholder="نام خود را وارد کنید"
+                              required
+                            />
+                          </div>
+
+                          <div class="col-12 col-md-6">
+                            <label class="mb-1" for="id">آدرس ایمیل</label>
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="id"
+                              placeholder="آدرس ایمیل"
+                              required
+                            />
+                          </div>
+
+                          <div class="col-12">
+                            <label class="mb-1" for="comments">نظرات</label>
+                            <textarea
+                              class="form-control"
+                              placeholder="اینجا نظر بدهید"
+                              id="comments"
+                              style="height: 100px"
+                              required
+                            ></textarea>
+                          </div>
+
+                          <div class="col-12">
+                            <button
+                              type="submit"
+                              class="btn default-light-theme default-theme default-theme-2"
+                            >
+                              ارسال
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mt-4">
+                      <div class="customer-review-box">
+                        <h4>نظرات مشتریان</h4>
+
+                        <div class="customer-section">
+                          <div class="customer-profile">
+                            <img
+                              src="assets/images/inner-page/review-image/1.jpg"
+                              class="img-fluid blur-up lazyload"
+                              alt=""
+                            />
+                          </div>
+
+                          <div class="customer-details">
+                            <h5>مرتضی احمدی</h5>
+                            <ul class="rating my-2 d-inline-block">
+                              <li>
+                                <i class="fas fa-star theme-color"></i>
+                              </li>
+                              <li>
+                                <i class="fas fa-star theme-color"></i>
+                              </li>
+                              <li>
+                                <i class="fas fa-star theme-color"></i>
+                              </li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                              </li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </ul>
+                            <p class="font-light">
+                              من Tab S2 خود را در Best Buy خریداری کردم اما می
+                              خواستم نظرات خود را در آمازون به اشتراک بگذارم. من
+                              قصد ندارم به مشخصات و مواردی از این دست بپردازم
+                              زیرا می توانید آن ها را در صد جای دیگر بخوانید.
+                              اگرچه من می گویم که نسخه "جدید" با Marshmallow از
+                              قبل بارگذاری شده است و اکنون از یک پردازنده هشت
+                              هسته ای Qualcomm به جای Exynos استفاده می کند که
+                              با نسل اول عرضه شد.
+                            </p>
+
+                            <p class="date-custo font-light">- 8 بهمن, 1401</p>
+                          </div>
+                        </div>
+
+                        <div class="customer-section">
+                          <div class="customer-profile">
+                            <img
+                              src="assets/images/inner-page/review-image/2.jpg"
+                              class="img-fluid blur-up lazyload"
+                              alt=""
+                            />
+                          </div>
+
+                          <div class="customer-details">
+                            <h5>حمید جبلی</h5>
+                            <ul class="rating my-2 d-inline-block">
+                              <li>
+                                <i class="fas fa-star theme-color"></i>
+                              </li>
+                              <li>
+                                <i class="fas fa-star theme-color"></i>
+                              </li>
+                              <li>
+                                <i class="fas fa-star theme-color"></i>
+                              </li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                              </li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </ul>
+                            <p class="font-light">
+                              مزایا: صفحه نمایش بزرگ (9.7 اینچی) زیبا. رنگ های
+                              روشن. نصب و راه اندازی آسان. به موقع رسید. معایب:
+                              پاسخگویی کمی کند است، اما انتظار می رود که تبلت 2
+                              نسل قدیمی باشد. اما خوب کار می کند و نسبت به پولش
+                              خوب است.
+                            </p>
+
+                            <p class="date-custo font-light">- 8 بهمن, 1401</p>
+                          </div>
+                        </div>
+
+                        <div class="customer-section">
+                          <div class="customer-profile">
+                            <img
+                              src="assets/images/inner-page/review-image/3.jpg"
+                              class="img-fluid blur-up lazyload"
+                              alt=""
+                            />
+                          </div>
+
+                          <div class="customer-details">
+                            <h5>محمد رضا هدایتی</h5>
+                            <ul class="rating my-2 d-inline-block">
+                              <li>
+                                <i class="fas fa-star theme-color"></i>
+                              </li>
+                              <li>
+                                <i class="fas fa-star theme-color"></i>
+                              </li>
+                              <li>
+                                <i class="fas fa-star theme-color"></i>
+                              </li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                              </li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </ul>
+                            <p class="font-light">
+                              عاشق سرعت پردازشگر و حساسیت صفحه نمایش لمسی شدم.
+                            </p>
+
+                            <p class="date-custo font-light">- 8 بهمن, 1401</p>
+                          </div>
+                        </div>
+
+                        <div class="customer-section">
+                          <div class="customer-profile">
+                            <img
+                              src="assets/images/inner-page/review-image/4.jpg"
+                              class="img-fluid blur-up lazyload"
+                              alt=""
+                            />
+                          </div>
+
+                          <div class="customer-details">
+                            <h5>بهمن دان</h5>
+                            <ul class="rating my-2 d-inline-block">
+                              <li>
+                                <i class="fas fa-star theme-color"></i>
+                              </li>
+                              <li>
+                                <i class="fas fa-star theme-color"></i>
+                              </li>
+                              <li>
+                                <i class="fas fa-star theme-color"></i>
+                              </li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                              </li>
+                              <li>
+                                <i class="fas fa-star"></i>
+                              </li>
+                            </ul>
+                            <p class="font-light">
+                              من تبلت را فروردین 1400 خریداری کردم و اکنون آبان
+                              1401 باید هر روز آن را شارژ کنم. من روی آن فیلم
+                              نمی بینم. فقط یک یا دو بازی در هنگام ناهار میکنم.
+                            </p>
+
+                            <p class="date-custo font-light">- 8 بهمن, 1401</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Shop Section end -->
+
+    <!-- product section start -->
+
+    <!-- product section end -->
+
+
+
+
+
+
+
+{% endblock content %}
+
+
+
+
+
+

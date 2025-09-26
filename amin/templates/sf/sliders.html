@@ -1,0 +1,80 @@
+    <section class="home-section home-style-2 pt-0">
+      <div class="container-fluid p-0">
+        <div class="slick-2 dot-dark">
+            {% for slider in sliders  %}
+
+          <div>
+            <div class="home-slider">
+              <div class="home-wrap row m-0">
+                <div class="col-xxl-3 col-lg-4 p-0 d-lg-block d-none">
+                  <div class="home-left-wrapper">
+                    <div>
+                      <h2>{{slider.slider_title1}}</h2>
+
+               
+
+                      <p>
+                            {{slider.slider_title2}}
+                      </p>
+                      <h3>
+                        {% if slider.product.get_price_by_discount < slider.product.price %}
+                        <del>{{slider.product.price}}ت</del>
+                        <span class="theme-color">{{slider.product.get_price_by_discount}}ت</span>
+                      {% else %}
+                        {{slider.product.price}}ت
+                      
+                        {% endif %}
+                    </h3>
+
+                      <div class="add-btn"  >
+                        <a href="#" class="btn btn-white" onclick="addshopcart({{slider.product.id}},1)"
+                          >سبد خرید</a
+                        >
+                        <a
+                            
+                          href="#"
+                          class="btn btn-solid-default ms-2"
+                        >
+                          <i class="fas fa-heart" onclick="add_to_favorite({{slider.product.id}})" ></i>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xxl-9 col-lg-8 p-0 left-content">
+                  <img
+                    src="{{media_url}}{{slider.image_name}}"
+                    class="bg-img blur-up lazyload"
+                    alt=""
+                  />
+                  <div class="home-content row">
+                    <div class="col-xxl-4 col-lg-4 col-md-4 col-sm-5 col-6">
+
+                      <h1 data-animation-in="fadeInUp">{{slider.slider_title3}}</h1>
+                      <h6
+                        class="mb-4"
+                        data-animation-in="fadeInUp"
+                        data-delay-in="0.4"
+                      >
+                        
+                       
+                      </h6>
+                      <div
+                        class="discover-block"
+                        data-animation-in="fadeInUp"
+                        data-delay-in="0.7"
+                      >
+                    
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+        </div>
+      </div>
+    </section>

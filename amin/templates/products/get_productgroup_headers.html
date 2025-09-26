@@ -1,0 +1,30 @@
+                            <div class="container-fluid">
+                              <div class="row">
+                                {% for product_group in products_group %}
+                                <div class="col mega-box">
+                                  <div class="link-section">
+                                    <div class="opensubmegamenu">
+                                      <ul>
+                                        <li>
+                                          <a
+                                            href="{% url "pro:products_of_group" slug=product_group.slug %}"
+                                            class="megamenu-image"
+                                          >
+                                            <img
+                                              src="{{media_url}}{{product_group.image_name}}"
+                                              class="img-fluid blur-up lazyload"
+                                              alt=""
+                                            />
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+
+                                    <div class="megamenu-image-title pb-0">
+                                      <a href="{% url "pro:products_of_group" slug=product_group.slug %}" ><h5 class="mb-0">{{product_group.group_title}}</h5></a>
+                                    </div>
+                                  </div>
+                                </div>
+                                {% endfor %}
+                              </div>
+                            </div>

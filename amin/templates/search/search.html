@@ -1,0 +1,42 @@
+{% extends "main_template.html" %}
+
+
+
+{% block content %}
+<form action="" method="post" >
+
+    <!-- Search bar section start -->
+    <section class="search-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="title title1 text-center">
+              <h2>محصول را جستجو کنید</h2>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-8 mx-auto">
+              
+            <div class="search-bar">
+              <div class="input-group search-bar w-100">
+                {% csrf_token %}  
+                {{form}}
+                <button type="submit" class="input-group-text" id="basic-addon3">
+                  <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    
+          </div>
+        </div>
+      </div>
+    </section>
+    </form>
+    <!-- Search bar section end -->
+
+
+{% endblock content %}
+
+
+
+
+

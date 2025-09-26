@@ -1,0 +1,88 @@
+  {% load humanize %}
+  {% if favorites %}
+  <!-- Cart Section Start -->
+    <section class="wish-list-section section-b-space">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 table-responsive">
+            <table class="table cart-table wishlist-table">
+              <thead>
+                <tr class="table-head">
+                  <th scope="col">عکس</th>
+                  <th scope="col">نام محصول</th>
+                  <th scope="col">قیمت</th>
+                  <th scope="col">دسترسی</th>
+                  <th scope="col">اقدام</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for fav in favorites %}
+                <tr>
+                  <td>
+                    <a href="{% url "pro:product_detail" slug=fav.product.slug %}">
+                      <img
+                        src="{{media_url}}{{fav.product.image_name}}"
+                        class="blur-up lazyload"
+                        alt=""
+                      />
+                    </a>
+                  </td>
+                  <td>
+                    <a href="{% url "pro:product_detail"  slug=fav.product.slug %}" class="font-light"
+                      >{{fav.product.product_name}}</a
+                    >
+                    <div class="mobile-cart-content row">
+                      <div class="col">
+                        <p>موجود است</p>
+                      </div>
+                      <div class="col">
+                        <p class="fw-bold">{{fav.product.price|intcomma}}ت</p>
+                      </div>
+                      <div class="col">
+                        <h2 class="td-color">
+                          <a href="javascript:void(0)" class="icon">
+                            <i class="fas fa-times"></i>
+                          </a>
+                        </h2>
+                        <h2 class="td-color">
+                          <a href="" class="icon">
+                            <i onclick="addshopcart({{product.id}},1)" class="fas fa-shopping-cart"></i>
+                          </a>
+                        </h2>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{fav.product.price|intcomma}}ت</p>
+                  </td>
+                  {% if fav.product.get_number_product %}
+                  <td>
+                    <p>موجود است</p>
+                  </td>
+                  {% else %}
+                  <td>
+                    <p>موجود نیست</p>
+                  </td>                  
+                  {% endif %}
+                  <td>
+                    <a href="javascript:void(0)" class="icon">
+                      <i onclick="delete_from_fav({{fav.product.id}})" class="fas fa-times"></i>
+                    </a>
+                    <a href="" class="icon">
+                      <i onclick="addshopcart({{fav.product.id}},1)" class="fas fa-shopping-cart"></i>
+                    </a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Cart Section End -->
+{% else %}
+    <h3 style="color:red;" >لیست علاقه مندی ها خالی می باشد<h3>
+
+{% endif %}

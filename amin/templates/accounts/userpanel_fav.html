@@ -1,0 +1,74 @@
+{% extends "user_panel_template.html" %}
+
+
+{% block content %}
+
+                <div class="box-head mb-3">
+                  <h3>لیست علاقه مندی من</h3>
+                </div>
+                <div class="table-responsive">
+                  <table class="table cart-table">
+                    <thead>
+                      <tr class="table-head">
+                        <th scope="col">عکس</th>
+                        <th scope="col">جزئیات محصول</th>
+                        <th scope="col">قیمت</th>
+                        <th scope="col">اقدام</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for fav in favorites %}
+                      <tr>
+                        <td>
+                          <a href="product-left-sidebar.html">
+                            <img
+                              src="{{media_url}}{{fav.product.image_name}}"
+                              class="blur-up lazyload"
+                              alt=""
+                            />
+                          </a>
+                        </td>
+                        <td>
+                          <p class="fs-6 m-0">{{fav.product.product_name}}</p>
+                        </td>
+                        <td>
+                            {% if fav.product.get_price_by_discount < fav.product.price %}
+                          <del><p class="theme-color fs-6">{{fav.product.price}} ت</p></del>
+                          <p class="theme-color fs-6">{{fav.product.get_price_by_discount}} ت</p>
+                            {% else %}
+                            <p class="theme-color fs-6">{{fav.product.price}} ت</p>
+                            
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if fav.product.get_number_product %}
+                          <a
+                            onclick="addshopcart({{fav.product.id}},1)"
+                            href="#"
+                            class="btn btn-solid-default btn-sm fw-bold"
+                            >انتقال دادن به سبد خرید
+                          </a>
+                          {% else %}
+                            <span style="color:red;">ناموجود</span>
+
+                          {% endif %}
+                        </td>
+                      </tr>
+                      {% endfor %}
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+
+
+
+
+{% endblock content %}
+
+
+
+
+
+

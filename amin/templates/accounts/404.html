@@ -1,0 +1,117 @@
+{% extends "main_template.html" %}
+
+
+{% block content %}
+    <!-- mobile fix menu start -->
+    <div class="mobile-menu d-sm-none">
+      <ul>
+        <li>
+          <a href="index.html">
+            <i data-feather="home"></i>
+            <span>خانه</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class="toggle-category">
+            <i data-feather="align-justify"></i>
+            <span>دسته بندی</span>
+          </a>
+        </li>
+        <li>
+          <a href="cart.html">
+            <i data-feather="shopping-bag"></i>
+            <span>سبد خرید</span>
+          </a>
+        </li>
+        <li>
+          <a href="wishlist.html">
+            <i data-feather="heart"></i>
+            <span>علاقه مندیها</span>
+          </a>
+        </li>
+        <li>
+          <a href="user-dashboard.html">
+            <i data-feather="user"></i>
+            <span>حساب</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- mobile fix menu end -->
+
+    <!-- Breadcrumb section start -->
+    <section class="breadcrumb-section section-b-space">
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h3>404</h3>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="index.html">
+                    <i class="fas fa-home"></i>
+                  </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">404</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Breadcrumb section end -->
+
+    <!-- 404 Section Start -->
+    <section class="page-not-found section-b-space">
+      <div class="container">
+        <div class="row gx-md-2 gx-0 gy-md-0 gy-3">
+          <div class="col-md-8 m-auto">
+            <div class="page-image">
+              <img
+                src="{{media_url}}images/inner-page/404.png"
+                class="img-fluid blur-up lazyload"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div class="col-md-8 mx-auto mt-md-5 mt-3">
+            <div class="page-container pass-forgot">
+              <div>
+                <h2>صفحه یافت نشد</h2>
+                <p>
+                  صفحه ای که به دنبال آن هستید وجود ندارد یا خطای دیگری رخ داده
+                  است. به عقب برگردید، یا یک مسیر جدید انتخاب کنید.
+                </p>
+                <a href="{% url "main:index" %}" class="btn btn-solid-default"
+                  >بازگشت به صفحه اصلی</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 404 Section End -->
+
+
+
+
+{% endblock content %}
+
+
+
+
+

@@ -1,0 +1,23 @@
+                      <ul class="category-list">
+                        {% for brand in brands  %}
+                        <li>
+                          <div class="form-check ps-0 custome-form-check">
+                            <input
+                              class="checkbox_animated check-it"
+                              type="checkbox"
+                              {% comment "" %} id="flexCheckDefault1"{% endcomment %}
+                              id="item.{{brand.id}}"
+                              name="brand"
+                              value={{brand.id}}
+                            />
+                            <label
+                              class="form-check-label"
+                              for="flexCheckDefault1"
+                              >{{brand.brand_title}}</label
+                            >
+                            <p class="font-light">({{brand.product_of_brands.all|length}})</p>
+                          </div>
+                        </li>
+                        {% endfor %}
+
+                      </ul>

@@ -1,0 +1,12 @@
+                <div class="footer-content">
+                  <ul>
+                    {% for product_group in product_groups %}
+                    <li>
+                      <a href="{% url "pro:products_of_group" slug=product_group.slug %}" class="font-dark"
+                        > {{product_group.group_title}}</a
+                      >
+                    </li>
+                    {% endfor %}
+
+                  </ul>
+                </div>

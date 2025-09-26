@@ -1,0 +1,496 @@
+{% load render_partial %}
+<!-- footer start -->
+    <footer class="footer-sm-space">
+      <div class="main-footer">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <div class="footer-contact">
+                <div class="brand-logo">
+                  <a href="index.html" class="footer-logo">
+                    <svg class="svg-icon">
+                      <use
+                        class="fill-color"
+                        xlink:href="{{media_url}}/svg/icons.svg#logo"
+                      ></use>
+                    </svg>
+                    <img
+                      src="{{media_url}}/images/logo.png"
+                      class="img-fluid blur-up lazyload"
+                      alt="logo"
+                    />
+                  </a>
+                </div>
+                <ul class="contact-lists">
+                  <li>
+                    <span>
+                      <b>تلفن:</b>
+                      <span class="font-light">082-5262626</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <b>آدرس:</b>
+                      <span class="font-light">
+                       شیروان-تقاطع -شفا و توحید</span
+                      >
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <b>ایمیل:</b>
+                      <span class="font-light"> Voxo123@gmail.com</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+  
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+              <div class="footer-links">
+                <div class="footer-title">
+                  <h3>دسته بندی های جدید</h3>
+                </div>
+                {% render_partial "pro:new_products_group" %}
+              </div>
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+              <div class="footer-links">
+                <div class="footer-title">
+                  <h3>کمک</h3>
+                </div>
+                <div class="footer-content">
+                  <ul>
+                    <li>
+                      <a href="{% url "accounts:last_orders" %}" class="font-dark"
+                        >سفارشات شما</a
+                      >
+                    </li>
+                    <li>
+                      <a href="{% url "accounts:userpanel" %}" class="font-dark"
+                        >حساب شما</a
+                      >
+                    </li>
+
+                    <li>
+                      <a href="{% url "sf:wishlist" %}" class="font-dark"
+                        >علاقه مندی های شما</a
+                      >
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </footer>
+    <!-- footer end -->
+
+    <!-- Quick view modal start -->
+    <div class="modal fade quick-view-modal" id="quick-view">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+          <div class="modal-body">
+            <div class="row gy-4">
+              <div class="col-lg-6">
+                <div class="quick-view-image">
+                  <div class="quick-view-slider ratio_2">
+                    <div>
+                      <img
+                        src="{{media_url}}/images/fashion/product/front/4.jpg"
+                        class="img-fluid bg-img blur-up lazyload"
+                        alt="product"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src="{{media_url}}/images/fashion/product/front/5.jpg"
+                        class="img-fluid bg-img blur-up lazyload"
+                        alt="product"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src="{{media_url}}/images/fashion/product/front/6.jpg"
+                        class="img-fluid bg-img blur-up lazyload"
+                        alt="product"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src="{{media_url}}/images/fashion/product/front/7.jpg"
+                        class="img-fluid bg-img blur-up lazyload"
+                        alt="product"
+                      />
+                    </div>
+                  </div>
+                  <div class="quick-nav">
+                    <div>
+                      <img
+                        src="{{media_url}}/images/fashion/product/front/4.jpg"
+                        class="img-fluid blur-up lazyload"
+                        alt="product"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src="{{media_url}}/images/fashion/product/front/5.jpg"
+                        class="img-fluid blur-up lazyload"
+                        alt="product"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src="{{media_url}}/images/fashion/product/front/6.jpg"
+                        class="img-fluid blur-up lazyload"
+                        alt="product"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src="{{media_url}}/images/fashion/product/front/7.jpg"
+                        class="img-fluid blur-up lazyload"
+                        alt="product"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="product-right">
+                  <h2 class="mb-2">تی شرت هودی مردانه</h2>
+                  <ul class="rating mt-1">
+                    <li>
+                      <i class="fas fa-star theme-color"></i>
+                    </li>
+                    <li>
+                      <i class="fas fa-star theme-color"></i>
+                    </li>
+                    <li>
+                      <i class="fas fa-star theme-color"></i>
+                    </li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                    </li>
+                    <li class="font-light">(موجود است)</li>
+                  </ul>
+                  <div class="price mt-3">
+                    <h3>20,000 ت</h3>
+                  </div>
+                  <div class="color-types">
+                    <h4>رنگ ها</h4>
+                    <ul class="color-variant mb-0">
+                      <li class="bg-half-light selected"></li>
+                      <li class="bg-light1"></li>
+                      <li class="bg-blue1"></li>
+                      <li class="bg-black1"></li>
+                    </ul>
+                  </div>
+                  <div class="size-detail">
+                    <h4>اندازه</h4>
+                    <ul class="">
+                      <li class="selected">S</li>
+                      <li>M</li>
+                      <li>L</li>
+                      <li>XL</li>
+                    </ul>
+                  </div>
+                  <div class="product-details">
+                    <h4>جزئیات محصول</h4>
+                    <ul>
+                      <li><span class="font-light">سبک :</span> هودی</li>
+                      <li><span class="font-light">دسته :</span> تی شرت</li>
+                      <li>
+                        <span class="font-light">برچسپ ها :</span> تابستانی،
+                        ارگانیک
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="product-btns">
+                    <a href="cart.html" class="btn btn-solid-default btn-sm"
+                      >سبد خرید</a
+                    >
+                    <a
+                      href="product-left-sidebar.html"
+                      class="btn btn-solid-default btn-sm"
+                      >مشاهده جزئیات</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Quick view modal end -->
+
+    <!-- Cart Successful Start -->
+    <div
+      class="modal fade cart-modal"
+      id="addtocart"
+      tabindex="-1"
+      role="dialog"
+      aria-label="myModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="modal-contain">
+              <div>
+                <div class="modal-messages">
+                  <i class="fas fa-check"></i> 3 هودی زیپ کامل راه راه با موفقیت
+                  به سبد خرید شما اضافه شد.
+                </div>
+                <div class="modal-product">
+                  <div class="modal-contain-img">
+                    <img
+                      src="{{media_url}}/images/fashion/instagram/4.jpg"
+                      class="img-fluid blur-up lazyload"
+                      alt=""
+                    />
+                  </div>
+                  <div class="modal-contain-details">
+                    <h4>جین لاغری</h4>
+                    <p class="font-light my-2">زرد، تعداد : 3</p>
+                    <div class="product-total">
+                      <h5>مجموع : <span>1,140,000 ت</span></h5>
+                    </div>
+                    <div class="shop-cart-button mt-3">
+                      <a
+                        href="shop-left-sidebar.html"
+                        class="btn default-light-theme conti-button default-theme default-theme-2 rounded"
+                        >ادامه خرید</a
+                      >
+                      <a
+                        href="cart.html"
+                        class="btn default-light-theme conti-button default-theme default-theme-2 rounded"
+                        >مشاهده سبد خرید</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ratio_asos mt-4">
+              <div class="container">
+                <div class="row m-0">
+                  <div class="col-sm-12 p-0">
+                    <div
+                      class="product-wrapper product-style-2 slide-4 p-0 light-arrow bottom-space spacing-slider"
+                    >
+                      <div>
+                        <div class="product-box">
+                          <div class="img-wrapper">
+                            <div class="front">
+                              <a href="product-left-sidebar.html">
+                                <img
+                                  src="{{media_url}}/images/fashion/product/front/1.jpg"
+                                  class="bg-img blur-up lazyload"
+                                  alt=""
+                                />
+                              </a>
+                            </div>
+                          </div>
+                          <div class="product-details text-center">
+                            <div class="rating-details d-block text-center">
+                              <span class="font-light grid-content"
+                                >ژاکت سیاه و زرد</span
+                              >
+                            </div>
+                            <div class="main-price mt-0 d-block text-center">
+                              <h3 class="theme-color">78,000 ت</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div class="product-box">
+                          <div class="img-wrapper">
+                            <div class="front">
+                              <a href="product-left-sidebar.html">
+                                <img
+                                  src="{{media_url}}/images/fashion/product/front/2.jpg"
+                                  class="bg-img blur-up lazyload"
+                                  alt=""
+                                />
+                              </a>
+                            </div>
+                          </div>
+                          <div class="product-details text-center">
+                            <div class="rating-details d-block text-center">
+                              <span class="font-light grid-content"
+                                >ژاکت سیاه و زرد</span
+                              >
+                            </div>
+                            <div class="main-price mt-0 d-block text-center">
+                              <h3 class="theme-color">78,000 ت</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div class="product-box">
+                          <div class="img-wrapper">
+                            <div class="front">
+                              <a href="product-left-sidebar.html">
+                                <img
+                                  src="{{media_url}}/images/fashion/product/front/3.jpg"
+                                  class="bg-img blur-up lazyload"
+                                  alt=""
+                                />
+                              </a>
+                            </div>
+                          </div>
+                          <div class="product-details text-center">
+                            <div class="rating-details d-block text-center">
+                              <span class="font-light grid-content"
+                                >ژاکت سیاه و زرد</span
+                              >
+                            </div>
+                            <div class="main-price mt-0 d-block text-center">
+                              <h3 class="theme-color">78,000 ت</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div class="product-box">
+                          <div class="img-wrapper">
+                            <div class="front">
+                              <a href="product-left-sidebar.html">
+                                <img
+                                  src="{{media_url}}/images/fashion/product/front/4.jpg"
+                                  class="bg-img blur-up lazyload"
+                                  alt=""
+                                />
+                              </a>
+                            </div>
+                          </div>
+                          <div class="product-details text-center">
+                            <div class="rating-details d-block text-center">
+                              <span class="font-light grid-content"
+                                >ژاکت سیاه و زرد</span
+                              >
+                            </div>
+                            <div class="main-price mt-0 d-block text-center">
+                              <h3 class="theme-color">78,000 ت</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Cart Successful End -->
+
+    <!-- Newsletter modal start -->
+    <div class="modal fade newletter-modal" id="newsletter">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <img
+              src="{{media_url}}/images/newletter-icon.png"
+              class="img-fluid blur-up lazyload"
+              alt=""
+            />
+            <div class="modal-title">
+              <h2 class="tt-title">برای دریافت خبرنامه ما ثبت نام کنید!</h2>
+              <p class="font-light">
+                هرگز به‌روزرسانی‌ها یا محصولات جدیدی را که معرفی می‌کنیم از دست
+                ندهید، به‌روز باشید.
+              </p>
+              <p class="font-light">اها، و این کار رایگان است!</p>
+
+              <div class="input-group mb-3">
+                <input placeholder="ایمیل" class="form-control" type="text" />
+              </div>
+
+              <div class="cancel-button text-center">
+                <button
+                  class="btn default-theme w-100"
+                  data-bs-dismiss="modal"
+                  type="button"
+                >
+                  ارسال
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Newsletter modal end -->
+
+    <!-- Coockie Section Start -->
+    <div class="cookie-bar-section">
+      <img src="{{media_url}}/images/cookie.png" alt="" />
+      <div class="content">
+        <h3>رضایت کوکی ها</h3>
+        <p class="font-light">
+          این وب سایت از کوکی ها استفاده می کند تا مطمئن شود بهترین تجربه را در
+          وب سایت ما به دست می آورید.
+        </p>
+        <div class="cookie-buttons">
+          <button class="btn btn-solid-default" id="button">
+            من متوجه هستم
+          </button>
+          <a href="javascript:void(0)" class="btn default-light1"
+            >بیشتر بدانید</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- Coockie Section End -->
+
+    <!-- tap to top Section Start -->
+    <div class="tap-to-top">
+      <a href="#home">
+        <i class="fas fa-chevron-up"></i>
+      </a>
+    </div>
+    <!-- tap to top Section End -->
+
+    <div class="bg-overlay"></div>

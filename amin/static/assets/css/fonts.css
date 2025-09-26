@@ -1,0 +1,91 @@
+/* Dana Font */
+@font-face {
+	font-family: dana;
+	font-style: normal;
+	font-weight: 100;
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-thin.eot');
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-thin.eot?#iefix') format('embedded-opentype'), 
+		 url('../../assets/fonts/Dana/woff/dana-fanum-thin.woff') format('woff'),
+		 url('../../assets/fonts/Dana/ttf/dana-fanum-thin.ttf') format('truetype');
+}
+@font-face {
+	font-family: dana;
+	font-style: normal;
+	font-weight: 200;
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-extralight.eot');
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-extralight.eot?#iefix') format('embedded-opentype'), 
+		 url('../../assets/fonts/Dana/woff/dana-fanum-extralight.woff') format('woff'),
+		 url('../../assets/fonts/Dana/ttf/dana-fanum-extralight.ttf') format('truetype');
+}
+@font-face {
+	font-family: dana;
+	font-style: normal;
+	font-weight: 300;
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-light.eot');
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-light.eot?#iefix') format('embedded-opentype'), 
+		 url('../../assets/fonts/Dana/woff/dana-fanum-light.woff') format('woff'),
+		 url('../../assets/fonts/Dana/ttf/dana-fanum-light.ttf') format('truetype');
+}
+@font-face {
+	font-family: dana;
+	font-style: normal;
+	font-weight: 400;
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-regular.eot');
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-regular.eot?#iefix') format('embedded-opentype'), 
+		 url('../../assets/fonts/Dana/woff/dana-fanum-regular.woff') format('woff'),
+		 url('../../assets/fonts/Dana/ttf/dana-fanum-regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: dana;
+	font-style: normal;
+	font-weight: 500;
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-medium.eot');
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-medium.eot?#iefix') format('embedded-opentype'), 
+		 url('../../assets/fonts/Dana/woff/dana-fanum-medium.woff') format('woff'),
+		 url('../../assets/fonts/Dana/ttf/dana-fanum-medium.ttf') format('truetype');
+}
+@font-face {
+	font-family: dana;
+	font-style: normal;
+	font-weight: 600;
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-demibold.eot');
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-demibold.eot?#iefix') format('embedded-opentype'), 
+		 url('../../assets/fonts/Dana/woff/dana-fanum-demibold.woff') format('woff'),
+		 url('../../assets/fonts/Dana/ttf/dana-fanum-demibold.ttf') format('truetype');
+}
+@font-face {
+	font-family: dana;
+	font-style: normal;
+	font-weight: 700;
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-bold.eot');
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-bold.eot?#iefix') format('embedded-opentype'), 
+		 url('../../assets/fonts/Dana/woff/dana-fanum-bold.woff') format('woff'),
+		 url('../../assets/fonts/Dana/ttf/dana-fanum-bold.ttf') format('truetype');
+}
+@font-face {
+	font-family: dana;
+	font-style: normal;
+	font-weight: 800;
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-extrabold.eot');
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-extrabold.eot?#iefix') format('embedded-opentype'), 
+		 url('../../assets/fonts/Dana/woff/dana-fanum-extrabold.woff') format('woff'),
+		 url('../../assets/fonts/Dana/ttf/dana-fanum-extrabold.ttf') format('truetype');
+}
+@font-face {
+	font-family: dana;
+	font-style: normal;
+	font-weight: 850;
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-ultrabold.eot');
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-ultrabold.eot?#iefix') format('embedded-opentype'), 
+		 url('../../assets/fonts/Dana/woff/dana-fanum-ultrabold.woff') format('woff'),
+		 url('../../assets/fonts/Dana/ttf/dana-fanum-ultrabold.ttf') format('truetype');
+}
+@font-face {
+	font-family: dana;
+	font-style: normal;
+	font-weight: 900;
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-black.eot');
+	src: url('../../assets/fonts/Dana/eot/dana-fanum-black.eot?#iefix') format('embedded-opentype'), 
+		 url('../../assets/fonts/Dana/woff/dana-fanum-black.woff') format('woff'),
+		 url('../../assets/fonts/Dana/ttf/dana-fanum-black.ttf') format('truetype');
+}

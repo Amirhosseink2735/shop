@@ -1,0 +1,150 @@
+{% extends "main_template.html" %}
+{% load humanize %}
+
+
+{% block content %}
+
+    <section class="ratio_asos">
+      <div class="container">
+        <div class="row m-0">
+          <div class="col-sm-12 p-0">
+            <div class="title title-2 text-center">
+              <h2>ارزان ترین محصولات</h2>
+              <h5 class="text-color">کلکسیون ما</h5>
+            </div>
+            <div class="product-wrapper product-style-2 row g-sm-4 g-3">
+              {% for product in products  %}
+                <div class="col-xl-3 col-lg-4 col-6">
+                
+                <div class="product-box">
+                  <div class="img-wrapper">
+                    <div class="front">
+                      <a href="{{product.get_absolute_url}}">
+                        <img
+                          src="{{media_url}}{{product.image_name}}"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    {% comment "" %}<div class="back">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/back/5.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="label-block">
+                      <span class="label label-black">جدید</span>
+                      <span class="label label-theme">50% تخفیف</span>
+                    </div>{% endcomment %}
+                    <div class="cart-wrap">
+                      <ul>
+                        <li>
+                          {% if product.get_number_product %}
+                          <a
+                            href="javascript:void(0)"
+                            class="addtocart-btn"
+                            onclick="addshopcart({{product.id}},1)"
+
+                          >
+                            <i data-feather="shopping-bag"></i>
+                          </a>
+                          {% else %}
+                          
+
+                          {% endif %}
+                        </li>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            
+                          >
+                            <i data-feather="eye"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a onclick="add_campare({{product.id}})" href="#">
+                            <i data-feather="refresh-cw"></i>
+                          </a>
+                        </li>
+                        {% if product.get_wishlist %}
+                        <li>
+                          <a href="" class="wishlist">
+                            <i onclick="add_to_favorite({{product.id}})" class="fa fa-heart"></i>
+                          </a>
+                        </li>
+                        
+                        {% else %}
+                        
+                        
+                        <li>
+                          <a href="" class="wishlist">
+                            <i onclick="add_to_favorite({{product.id}})" class="fa fa-heart-broken"></i>
+                          </a>
+                        </li>
+
+                        {% endif %}
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="rating-details">
+                      <span class="font-light grid-content">{{product.product_name}}</span>
+   
+                    </div>
+                    <div class="main-price">
+                      <a href="{{product.get_absolute_url}}" class="font-default">
+                        <h5>{{product.s_description}}</h5>
+                      </a>
+                      <div class="listing-content">
+                        <span class="font-light">{{product.product_name}}</span>
+                        <p class="font-light">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                          چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+                          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
+                          برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
+                          با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
+                          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
+                          و متخصصان را می طلبد.
+                        </p>
+                      </div>
+                    {% if product.get_number_product <= 0 %}
+
+                    <span style="color:red" >ناموجود</span>
+                    {% else %}
+                    
+                      {% if product.price > product.get_price_by_discount %}
+                      <del><div class="theme-color">{{product.price}}ت</div></del>
+                      <div class="theme-color">{{product.get_product_discount}}ت</div>
+                      {% else %}
+                      
+                      <h3 class="theme-color">{{product.price}}ت</h3>
+                      {% endif %}
+                
+                    {% endif %}
+                      <button
+                        onclick="location.href = 'cart.html';"
+                        class="btn listing-content"
+                      >
+                        سبد خرید
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              {% endfor %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock content %}
+
+
+

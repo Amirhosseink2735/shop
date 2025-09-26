@@ -1,0 +1,1862 @@
+{% extends "main_template.html" %}
+
+
+
+{% load render_partial %}
+
+
+
+{% block content %}
+
+
+
+    <!-- mobile fix menu start -->
+    <div class="mobile-menu d-sm-none">
+      <ul>
+        <li>
+          <a href="{% url "main:index" %}" class="active">
+            <i data-feather="home"></i>
+            <span>خانه</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class="toggle-category">
+            <i data-feather="align-justify"></i>
+            <span>دسته بندی</span>
+          </a>
+        </li>
+        <li>
+          <a href="cart.html">
+            <i data-feather="shopping-bag"></i>
+            <span>سبد خرید</span>
+          </a>
+        </li>
+        <li>
+          <a href="wishlist.html">
+            <i data-feather="heart"></i>
+            <span>علاقه مندیها</span>
+          </a>
+        </li>
+        <li>
+          <a href="user-dashboard.html">
+            <i data-feather="user"></i>
+            <span>حساب</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- mobile fix menu end -->
+
+    <!-- home slider start -->
+    {% render_partial "sf:get_slider" %}
+    <!-- home slider end -->
+
+    <!-- banner section start -->
+    {% render_partial "pro:get_product_with_discount" %}
+    <!-- banner section end -->
+
+    <!-- product section start -->
+    {% render_partial "pro:newpro" %}
+    {% comment "" %}<section class="ratio_asos">
+      <div class="container">
+        <div class="row m-0">
+          <div class="col-sm-12 p-0">
+            <div class="title title-2 text-center">
+              <h2>محصولات جدید</h2>
+              <h5 class="text-color">کلکسیون ما</h5>
+            </div>
+            <div
+              class="product-wrapper product-style-2 slide-4 p-0 light-arrow bottom-space"
+            >
+              <div>
+                <div class="product-box">
+                  <div class="img-wrapper">
+                    <div class="front">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/front/1.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="back">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/back/1.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="cart-wrap">
+                      <ul>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            class="addtocart-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addtocart"
+                          >
+                            <i data-feather="shopping-bag"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            data-bs-toggle="modal"
+                            data-bs-target="#quick-view"
+                          >
+                            <i data-feather="eye"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="compare.html">
+                            <i data-feather="refresh-cw"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="wishlist.html" class="wishlist">
+                            <i data-feather="heart"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="rating-details">
+                      <span class="font-light grid-content"
+                        >ژاکت سیاه و زرد</span
+                      >
+                      <ul class="rating mt-0">
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="main-price">
+                      <a href="product-left-sidebar.html" class="font-default">
+                        <h5>کت پلاستیکی مناسب برای لاغری</h5>
+                      </a>
+                      <div class="listing-content">
+                        <span class="font-light">تناسب منظم</span>
+                        <p class="font-light">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                          چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+                          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
+                          برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
+                          با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
+                          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
+                          و متخصصان را می طلبد.
+                        </p>
+                      </div>
+                      <h3 class="theme-color">78,000 ت</h3>
+                      <button
+                        onclick="location.href = 'cart.html';"
+                        class="btn listing-content"
+                      >
+                        سبد خرید
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="product-box">
+                  <div class="img-wrapper">
+                    <div class="front">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/front/2.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="back">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/back/2.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="label-block">
+                      <span class="label label-black">جدید</span>
+                      <span class="label label-theme">50% تخفیف</span>
+                    </div>
+                    <div class="cart-wrap">
+                      <ul>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            class="addtocart-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addtocart"
+                          >
+                            <i data-feather="shopping-bag"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            data-bs-toggle="modal"
+                            data-bs-target="#quick-view"
+                          >
+                            <i data-feather="eye"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="compare.html">
+                            <i data-feather="refresh-cw"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="wishlist.html" class="wishlist">
+                            <i data-feather="heart"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="rating-details">
+                      <span class="font-light grid-content">ژاکت</span>
+                      <ul class="rating mt-0">
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="main-price">
+                      <a href="product-left-sidebar.html" class="font-default">
+                        <h5>ژاکت چرمی آبی</h5>
+                      </a>
+                      <div class="listing-content">
+                        <span class="font-light">تناسب منظم</span>
+                        <p class="font-light">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                          چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+                          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
+                          برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
+                          با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
+                          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
+                          و متخصصان را می طلبد.
+                        </p>
+                      </div>
+                      <h3 class="theme-color">60,000 ت</h3>
+                      <button
+                        onclick="location.href = 'cart.html';"
+                        class="btn listing-content"
+                      >
+                        سبد خرید
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="product-box">
+                  <div class="img-wrapper">
+                    <div class="front">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/front/3.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="back">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/back/3.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="cart-wrap">
+                      <ul>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            class="addtocart-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addtocart"
+                          >
+                            <i data-feather="shopping-bag"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            data-bs-toggle="modal"
+                            data-bs-target="#quick-view"
+                          >
+                            <i data-feather="eye"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="compare.html">
+                            <i data-feather="refresh-cw"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="wishlist.html" class="wishlist">
+                            <i data-feather="heart"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="rating-details">
+                      <span class="font-light grid-content">دریس</span>
+                      <ul class="rating mt-0">
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="main-price">
+                      <a href="product-left-sidebar.html" class="font-default">
+                        <h5>لباس شب نظامی</h5>
+                      </a>
+                      <div class="listing-content">
+                        <span class="font-light">تناسب منظم</span>
+                        <p class="font-light">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                          چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+                          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
+                          برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
+                          با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
+                          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
+                          و متخصصان را می طلبد.
+                        </p>
+                      </div>
+                      <h3 class="theme-color">85,000 ت</h3>
+                      <button
+                        onclick="location.href = 'cart.html';"
+                        class="btn listing-content"
+                      >
+                        سبد خرید
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="product-box">
+                  <div class="img-wrapper">
+                    <div class="front">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/front/4.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="back">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/back/4.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="label-block">
+                      <span class="label label-black">جدید</span>
+                      <span class="label label-theme">50% تخفیف</span>
+                    </div>
+                    <div class="cart-wrap">
+                      <ul>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            class="addtocart-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addtocart"
+                          >
+                            <i data-feather="shopping-bag"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            data-bs-toggle="modal"
+                            data-bs-target="#quick-view"
+                          >
+                            <i data-feather="eye"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="compare.html">
+                            <i data-feather="refresh-cw"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="wishlist.html" class="wishlist">
+                            <i data-feather="heart"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="rating-details">
+                      <span class="font-light grid-content">ژاکت</span>
+                      <ul class="rating mt-0">
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="main-price">
+                      <a href="product-left-sidebar.html" class="font-default">
+                        <h5>ژاکت زرد آستین کامل</h5>
+                      </a>
+                      <div class="listing-content">
+                        <span class="font-light">تناسب منظم</span>
+                        <p class="font-light">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                          چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+                          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
+                          برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
+                          با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
+                          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
+                          و متخصصان را می طلبد.
+                        </p>
+                      </div>
+                      <h3 class="theme-color">69,000 ت</h3>
+                      <button
+                        onclick="location.href = 'cart.html';"
+                        class="btn listing-content"
+                      >
+                        سبد خرید
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="product-box">
+                  <div class="img-wrapper">
+                    <div class="front">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/front/2.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="back">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/back/2.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="label-block">
+                      <span class="label label-black">جدید</span>
+                      <span class="label label-theme">50% تخفیف</span>
+                    </div>
+                    <div class="cart-wrap">
+                      <ul>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            class="addtocart-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addtocart"
+                          >
+                            <i data-feather="shopping-bag"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            data-bs-toggle="modal"
+                            data-bs-target="#quick-view"
+                          >
+                            <i data-feather="eye"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="compare.html">
+                            <i data-feather="refresh-cw"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="wishlist.html" class="wishlist">
+                            <i data-feather="heart"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="rating-details">
+                      <span class="font-light grid-content">ژاکت</span>
+                      <ul class="rating mt-0">
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="main-price">
+                      <a href="product-left-sidebar.html" class="font-default">
+                        <h5>ژاکت چرمی آبی</h5>
+                      </a>
+                      <div class="listing-content">
+                        <span class="font-light">تناسب منظم</span>
+                        <p class="font-light">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                          چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+                          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
+                          برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
+                          با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
+                          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
+                          و متخصصان را می طلبد.
+                        </p>
+                      </div>
+                      <h3 class="theme-color">60,000 ت</h3>
+                      <button
+                        onclick="location.href = 'cart.html';"
+                        class="btn listing-content"
+                      >
+                        سبد خرید
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>{% endcomment %}
+    <!-- product section end -->
+
+    <!-- category section start -->
+    {% render_partial "pro:pop_group" %}
+    {% comment "" %}<section class="category-section ratio_40">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="title title-2 text-center">
+              <h2>دسته ما</h2>
+              <h5 class="text-color">کلکسیون ما</h5>
+            </div>
+          </div>
+        </div>
+        <div class="row gy-3">
+          <div class="col-xxl-2 col-lg-3">
+            <div
+              class="category-wrap category-padding category-block theme-bg-color"
+            >
+              <div>
+                <h2 class="light-text">برتر</h2>
+                <h2 class="top-spacing">دسته های</h2>
+                <span>محبوب</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xxl-10 col-lg-9">
+            <div
+              class="category-wrapper category-slider1 white-arrow category-arrow"
+            >
+              <div>
+                <a
+                  href="shop-left-sidebar.html"
+                  class="category-wrap category-padding"
+                >
+                  <img
+                    src="{{media_url}}/images/fashion/category/1.jpg"
+                    class="bg-img blur-up lazyload"
+                    alt="category image"
+                  />
+                  <div class="category-content category-text-1">
+                    <h3 class="theme-color">کفش ها</h3>
+                    <span class="text-dark">مد</span>
+                  </div>
+                </a>
+              </div>
+              <div>
+                <a
+                  href="shop-left-sidebar.html"
+                  class="category-wrap category-padding"
+                >
+                  <img
+                    src="{{media_url}}/images/fashion/category/2.jpg"
+                    class="bg-img blur-up lazyload"
+                    alt="category image"
+                  />
+                  <div class="category-content category-text-1">
+                    <h3 class="theme-color">مردانه</h3>
+                    <span class="text-dark">مد</span>
+                  </div>
+                </a>
+              </div>
+              <div>
+                <a
+                  href="shop-left-sidebar.html"
+                  class="category-wrap category-padding"
+                >
+                  <img
+                    src="{{media_url}}/images/fashion/category/3.jpg"
+                    class="bg-img blur-up lazyload"
+                    alt="category image"
+                  />
+                  <div class="category-content category-text-1">
+                    <h3 class="theme-color">شلوار جین</h3>
+                    <span class="text-dark">مد</span>
+                  </div>
+                </a>
+              </div>
+              <div>
+                <a
+                  href="shop-left-sidebar.html"
+                  class="category-wrap category-padding"
+                >
+                  <img
+                    src="{{media_url}}/images/fashion/category/4.jpg"
+                    class="bg-img blur-up lazyload"
+                    alt="category image"
+                  />
+                  <div class="category-content category-text-1">
+                    <h3 class="theme-color">ژاکت</h3>
+                    <span class="text-dark">مد</span>
+                  </div>
+                </a>
+              </div>
+              <div>
+                <a
+                  href="shop-left-sidebar.html"
+                  class="category-wrap category-padding"
+                >
+                  <img
+                    src="{{media_url}}/images/fashion/category/3.jpg"
+                    class="bg-img blur-up lazyload"
+                    alt="category image"
+                  />
+                  <div class="category-content category-text-1">
+                    <h3 class="theme-color">شلوار جین</h3>
+                    <span class="text-dark">مد</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>{% endcomment %}
+    <!-- category section end -->
+
+    <!-- banner section 2 start -->
+
+    <!-- banner section 2 end -->
+
+    <!-- product section 2 start -->
+
+    {% render_partial "pro:chepeast_pro" %}
+    {% comment "" %}<section class="ratio_asos">
+      <div class="container">
+        <div class="row m-0">
+          <div class="col-sm-12 p-0">
+            <div class="title title-2 text-center">
+              <h2>ارزان ترین محصولات</h2>
+              <h5 class="text-color">کلکسیون ما</h5>
+            </div>
+            <div class="product-wrapper product-style-2 row g-sm-4 g-3">
+              <div class="col-xl-3 col-lg-4 col-6">
+                <div class="product-box">
+                  <div class="img-wrapper">
+                    <div class="front">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/front/5.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="back">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/back/5.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="label-block">
+                      <span class="label label-black">جدید</span>
+                      <span class="label label-theme">50% تخفیف</span>
+                    </div>
+                    <div class="cart-wrap">
+                      <ul>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            class="addtocart-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addtocart"
+                          >
+                            <i data-feather="shopping-bag"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            data-bs-toggle="modal"
+                            data-bs-target="#quick-view"
+                          >
+                            <i data-feather="eye"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="compare.html">
+                            <i data-feather="refresh-cw"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="wishlist.html" class="wishlist">
+                            <i data-feather="heart"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="rating-details">
+                      <span class="font-light grid-content">ژاکت</span>
+                      <ul class="rating mt-0">
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="main-price">
+                      <a href="product-left-sidebar.html" class="font-default">
+                        <h5>ژاکت کاملا زنانه</h5>
+                      </a>
+                      <div class="listing-content">
+                        <span class="font-light">ژاکت</span>
+                        <p class="font-light">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                          چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+                          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
+                          برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
+                          با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
+                          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
+                          و متخصصان را می طلبد.
+                        </p>
+                      </div>
+                      <h3 class="theme-color">40,000 ت</h3>
+                      <button
+                        onclick="location.href = 'cart.html';"
+                        class="btn listing-content"
+                      >
+                        سبد خرید
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-lg-4 col-6">
+                <div class="product-box">
+                  <div class="img-wrapper">
+                    <div class="front">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/front/6.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="back">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/back/6.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="cart-wrap">
+                      <ul>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            class="addtocart-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addtocart"
+                          >
+                            <i data-feather="shopping-bag"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            data-bs-toggle="modal"
+                            data-bs-target="#quick-view"
+                          >
+                            <i data-feather="eye"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="compare.html">
+                            <i data-feather="refresh-cw"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="wishlist.html" class="wishlist">
+                            <i data-feather="heart"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="rating-details">
+                      <span class="font-light grid-content">تی شرت</span>
+                      <ul class="rating mt-0">
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="main-price">
+                      <a href="product-left-sidebar.html" class="font-default">
+                        <h5>تی شرت آستین کامل سیاه</h5>
+                      </a>
+                      <div class="listing-content">
+                        <span class="font-light">تی شرت</span>
+                        <p class="font-light">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                          چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+                          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
+                          برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
+                          با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
+                          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
+                          و متخصصان را می طلبد.
+                        </p>
+                      </div>
+                      <h3 class="theme-color">69,000 ت</h3>
+                      <button
+                        onclick="location.href = 'cart.html';"
+                        class="btn listing-content"
+                      >
+                        سبد خرید
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-lg-4 col-6">
+                <div class="product-box">
+                  <div class="img-wrapper">
+                    <div class="front">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/front/7.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="back">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/back/7.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="label-block">
+                      <span class="label label-black">جدید</span>
+                      <span class="label label-theme">50% تخفیف</span>
+                    </div>
+                    <div class="cart-wrap">
+                      <ul>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            class="addtocart-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addtocart"
+                          >
+                            <i data-feather="shopping-bag"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            data-bs-toggle="modal"
+                            data-bs-target="#quick-view"
+                          >
+                            <i data-feather="eye"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="compare.html">
+                            <i data-feather="refresh-cw"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="wishlist.html" class="wishlist">
+                            <i data-feather="heart"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="rating-details">
+                      <span class="font-light grid-content">مد</span>
+                      <ul class="rating mt-0">
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="main-price">
+                      <a href="product-left-sidebar.html" class="font-default">
+                        <h5>جدیدترین تنپوش های مد</h5>
+                      </a>
+                      <div class="listing-content">
+                        <span class="font-light">مد</span>
+                        <p class="font-light">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                          چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+                          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
+                          برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
+                          با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
+                          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
+                          و متخصصان را می طلبد.
+                        </p>
+                      </div>
+                      <h3 class="theme-color">54,000 ت</h3>
+                      <button
+                        onclick="location.href = 'cart.html';"
+                        class="btn listing-content"
+                      >
+                        سبد خرید
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-lg-4 col-6">
+                <div class="product-box">
+                  <div class="img-wrapper">
+                    <div class="front">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/front/8.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="back">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/back/8.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="cart-wrap">
+                      <ul>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            class="addtocart-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addtocart"
+                          >
+                            <i data-feather="shopping-bag"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            data-bs-toggle="modal"
+                            data-bs-target="#quick-view"
+                          >
+                            <i data-feather="eye"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="compare.html">
+                            <i data-feather="refresh-cw"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="wishlist.html" class="wishlist">
+                            <i data-feather="heart"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="rating-details">
+                      <span class="font-light grid-content">ژاکت</span>
+                      <ul class="rating mt-0">
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="main-price">
+                      <a href="product-left-sidebar.html" class="font-default">
+                        <h5>ژاکت آستین کامل سیاه</h5>
+                      </a>
+                      <div class="listing-content">
+                        <span class="font-light">ژاکت</span>
+                        <p class="font-light">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                          چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+                          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
+                          برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
+                          با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
+                          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
+                          و متخصصان را می طلبد.
+                        </p>
+                      </div>
+                      <h3 class="theme-color">99,000 ت</h3>
+                      <button
+                        onclick="location.href = 'cart.html';"
+                        class="btn listing-content"
+                      >
+                        سبد خرید
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-lg-4 col-6">
+                <div class="product-box">
+                  <div class="img-wrapper">
+                    <div class="front">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/front/1.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="back">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/back/1.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="label-block">
+                      <span class="label label-black">جدید</span>
+                      <span class="label label-theme">50% تخفیف</span>
+                    </div>
+                    <div class="cart-wrap">
+                      <ul>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            class="addtocart-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addtocart"
+                          >
+                            <i data-feather="shopping-bag"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            data-bs-toggle="modal"
+                            data-bs-target="#quick-view"
+                          >
+                            <i data-feather="eye"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="compare.html">
+                            <i data-feather="refresh-cw"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="wishlist.html" class="wishlist">
+                            <i data-feather="heart"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="rating-details">
+                      <span class="font-light grid-content"
+                        >ژاکت سیاه و زرد</span
+                      >
+                      <ul class="rating mt-0">
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="main-price">
+                      <a href="product-left-sidebar.html" class="font-default">
+                        <h5>کت پلاستیکی مناسب برای لاغری</h5>
+                      </a>
+                      <div class="listing-content">
+                        <span class="font-light">تناسب منظم</span>
+                        <p class="font-light">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                          چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+                          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
+                          برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
+                          با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
+                          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
+                          و متخصصان را می طلبد.
+                        </p>
+                      </div>
+                      <h3 class="theme-color">78,000 ت</h3>
+                      <button
+                        onclick="location.href = 'cart.html';"
+                        class="btn listing-content"
+                      >
+                        سبد خرید
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-lg-4 col-6">
+                <div class="product-box">
+                  <div class="img-wrapper">
+                    <div class="front">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/front/2.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="back">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/back/2.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="label-block">
+                      <span class="label label-black">جدید</span>
+                      <span class="label label-theme">50% تخفیف</span>
+                    </div>
+                    <div class="cart-wrap">
+                      <ul>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            class="addtocart-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addtocart"
+                          >
+                            <i data-feather="shopping-bag"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            data-bs-toggle="modal"
+                            data-bs-target="#quick-view"
+                          >
+                            <i data-feather="eye"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="compare.html">
+                            <i data-feather="refresh-cw"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="wishlist.html" class="wishlist">
+                            <i data-feather="heart"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="rating-details">
+                      <span class="font-light grid-content">ژاکت</span>
+                      <ul class="rating mt-0">
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="main-price">
+                      <a href="product-left-sidebar.html" class="font-default">
+                        <h5>ژاکت چرمی آبی</h5>
+                      </a>
+                      <div class="listing-content">
+                        <span class="font-light">تناسب منظم</span>
+                        <p class="font-light">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                          چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+                          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
+                          برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
+                          با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
+                          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
+                          و متخصصان را می طلبد.
+                        </p>
+                      </div>
+                      <h3 class="theme-color">60,000 ت</h3>
+                      <button
+                        onclick="location.href = 'cart.html';"
+                        class="btn listing-content"
+                      >
+                        سبد خرید
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-lg-4 col-6">
+                <div class="product-box">
+                  <div class="img-wrapper">
+                    <div class="front">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/front/3.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="back">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/back/3.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="cart-wrap">
+                      <ul>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            class="addtocart-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addtocart"
+                          >
+                            <i data-feather="shopping-bag"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            data-bs-toggle="modal"
+                            data-bs-target="#quick-view"
+                          >
+                            <i data-feather="eye"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="compare.html">
+                            <i data-feather="refresh-cw"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="wishlist.html" class="wishlist">
+                            <i data-feather="heart"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="rating-details">
+                      <span class="font-light grid-content">دریس</span>
+                      <ul class="rating mt-0">
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star"></i>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="main-price">
+                      <a href="product-left-sidebar.html" class="font-default">
+                        <h5>لباس شب نظامی</h5>
+                      </a>
+                      <div class="listing-content">
+                        <span class="font-light">تناسب منظم</span>
+                        <p class="font-light">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                          چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+                          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
+                          برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
+                          با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
+                          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
+                          و متخصصان را می طلبد.
+                        </p>
+                      </div>
+                      <h3 class="theme-color">85,000 ت</h3>
+                      <button
+                        onclick="location.href = 'cart.html';"
+                        class="btn listing-content"
+                      >
+                        سبد خرید
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-lg-4 col-6">
+                <div class="product-box">
+                  <div class="img-wrapper">
+                    <div class="front">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/front/4.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="back">
+                      <a href="product-left-sidebar.html">
+                        <img
+                          src="{{media_url}}/images/fashion/product/back/4.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="cart-wrap">
+                      <ul>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            class="addtocart-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addtocart"
+                          >
+                            <i data-feather="shopping-bag"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="javascript:void(0)"
+                            data-bs-toggle="modal"
+                            data-bs-target="#quick-view"
+                          >
+                            <i data-feather="eye"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="compare.html">
+                            <i data-feather="refresh-cw"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="wishlist.html" class="wishlist">
+                            <i data-feather="heart"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="rating-details">
+                      <span class="font-light grid-content">ژاکت</span>
+                      <ul class="rating mt-0">
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                        <li>
+                          <i class="fas fa-star theme-color"></i>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="main-price">
+                      <a href="product-left-sidebar.html" class="font-default">
+                        <h5>ژاکت زرد آستین کامل</h5>
+                      </a>
+                      <div class="listing-content">
+                        <span class="font-light">تناسب منظم</span>
+                        <p class="font-light">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                          چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+                          بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
+                          برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
+                          با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
+                          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
+                          و متخصصان را می طلبد.
+                        </p>
+                      </div>
+                      <h3 class="theme-color">69,000 ت</h3>
+                      <button
+                        onclick="location.href = 'cart.html';"
+                        class="btn listing-content"
+                      >
+                        سبد خرید
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endcomment %}
+    <!-- product section 2 end -->
+
+    <!-- Banner section 3 start -->
+
+    <!-- Banner section 3 end -->
+
+    <!-- instagram shop section start -->
+    {% comment "" %}<section class="ratio_square">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <div class="title title-2 text-center">
+              <h2>فروشگاه اینستاگرام</h2>
+              <h5 class="text-color">کلکسیون جدید</h5>
+            </div>
+            <div class="product-style-1 instagram-2 product-wrapper">
+              <div class="insta-slider instagram-wrap">
+                <div>
+                  <div class="product-box">
+                    <div class="img-wrapper">
+                      <div class="top-wishlist product-color">
+                        <a
+                          href="wishlist.html"
+                          class="heart-wishlist heart-color ms-auto"
+                        >
+                          <i class="far fa-heart"></i>
+                        </a>
+                      </div>
+                      <div class="share share-box share-opacity">
+                        <span>اشتراک گذاری</span>
+                        <span class="share-plus share-plus-color">+</span>
+                      </div>
+                      <a href="javascript:void(0)" class="text-center">
+                        <img
+                          src="{{media_url}}/images/fashion/instagram/1.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="insta-hover insta-spacing text-center">
+                      <div>
+                        <h5>پیشنهاد جدید -56% تخفیف</h5>
+                        <h3 class="text-hide">تی شرت زنانه از 35,000 ت</h3>
+                        <button
+                          onclick="location.href = 'shop-left-sidebar.html';"
+                          type="button"
+                          class="btn btn-light-white"
+                        >
+                          اکنون خرید کنید
+                          <i class="fas fa-chevron-left ms-2"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="product-box">
+                    <div class="img-wrapper">
+                      <div class="top-wishlist product-color">
+                        <a
+                          href="wishlist.html"
+                          class="heart-wishlist heart-color ms-auto"
+                        >
+                          <i class="far fa-heart"></i>
+                        </a>
+                      </div>
+                      <div class="share share-box share-opacity">
+                        <span>اشتراک گذاری</span>
+                        <span class="share-plus share-plus-color">+</span>
+                      </div>
+                      <a href="javascript:void(0)" class="text-center">
+                        <img
+                          src="{{media_url}}/images/fashion/instagram/2.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="insta-hover insta-spacing text-center">
+                      <div>
+                        <h5>پیشنهاد جدید -56% تخفیف</h5>
+                        <h3 class="text-hide">تی شرت زنانه از 35,000 ت</h3>
+                        <button
+                          onclick="location.href = 'shop-left-sidebar.html';"
+                          type="button"
+                          class="btn btn-light-white"
+                        >
+                          اکنون خرید کنید
+                          <i class="fas fa-chevron-left ms-2"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="product-box">
+                    <div class="img-wrapper">
+                      <div class="top-wishlist product-color">
+                        <a
+                          href="wishlist.html"
+                          class="heart-wishlist heart-color ms-auto"
+                        >
+                          <i class="far fa-heart"></i>
+                        </a>
+                      </div>
+                      <div class="share share-box share-opacity">
+                        <span>اشتراک گذاری</span>
+                        <span class="share-plus share-plus-color">+</span>
+                      </div>
+                      <a href="javascript:void(0)" class="text-center">
+                        <img
+                          src="{{media_url}}/images/fashion/instagram/3.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="insta-hover insta-spacing text-center">
+                      <div>
+                        <h5>پیشنهاد جدید -56% تخفیف</h5>
+                        <h3 class="text-hide">تی شرت زنانه از 35,000 ت</h3>
+                        <button
+                          onclick="location.href = 'shop-left-sidebar.html';"
+                          type="button"
+                          class="btn btn-light-white"
+                        >
+                          اکنون خرید کنید
+                          <i class="fas fa-chevron-left ms-2"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="product-box">
+                    <div class="img-wrapper">
+                      <div class="top-wishlist product-color">
+                        <a
+                          href="wishlist.html"
+                          class="heart-wishlist heart-color ms-auto"
+                        >
+                          <i class="far fa-heart"></i>
+                        </a>
+                      </div>
+                      <div class="share share-box share-opacity">
+                        <span>اشتراک گذاری</span>
+                        <span class="share-plus share-plus-color">+</span>
+                      </div>
+                      <a href="javascript:void(0)" class="text-center">
+                        <img
+                          src="{{media_url}}/images/fashion/instagram/4.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="insta-hover insta-spacing text-center">
+                      <div>
+                        <h5>پیشنهاد جدید -56% تخفیف</h5>
+                        <h3 class="text-hide">تی شرت زنانه از 35,000 ت</h3>
+                        <button
+                          onclick="location.href = 'shop-left-sidebar.html';"
+                          type="button"
+                          class="btn btn-light-white"
+                        >
+                          اکنون خرید کنید
+                          <i class="fas fa-chevron-left ms-2"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="product-box">
+                    <div class="img-wrapper">
+                      <div class="top-wishlist product-color">
+                        <a
+                          href="wishlist.html"
+                          class="heart-wishlist heart-color ms-auto"
+                        >
+                          <i class="far fa-heart"></i>
+                        </a>
+                      </div>
+                      <div class="share share-box share-opacity">
+                        <span>اشتراک گذاری</span>
+                        <span class="share-plus share-plus-color">+</span>
+                      </div>
+                      <a href="javascript:void(0)" class="text-center">
+                        <img
+                          src="{{media_url}}/images/fashion/instagram/5.jpg"
+                          class="bg-img blur-up lazyload"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="insta-hover insta-spacing text-center">
+                      <div>
+                        <h5>پیشنهاد جدید -56% تخفیف</h5>
+                        <h3 class="text-hide">تی شرت زنانه از 35,000 ت</h3>
+                        <button
+                          onclick="location.href = 'shop-left-sidebar.html';"
+                          type="button"
+                          class="btn btn-light-white"
+                        >
+                          اکنون خرید کنید
+                          <i class="fas fa-chevron-left ms-2"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endcomment %}
+    <!-- instagram shop section end -->
+
+    <!-- service section start -->
+    <section class="service-section service-style-2 section-b-space">
+      <div class="container">
+        <div class="row g-4 g-sm-3">
+          <div class="col-xl-3 col-sm-6">
+            <div class="service-wrap">
+              <div class="service-icon">
+                <svg>
+                  <use xlink:href="{{media_url}}/svg/icons.svg#customer"></use>
+                </svg>
+              </div>
+              <div class="service-content">
+                <h3 class="mb-2">خدمات مشتری</h3>
+                <span class="font-light">خدمات مشتری درجه یک.</span>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col-xl-3 col-sm-6">
+            <div class="service-wrap">
+              <div class="service-icon">
+                <svg>
+                  <use xlink:href="{{media_url}}/svg/icons.svg#secure-payment"></use>
+                </svg>
+              </div>
+              <div class="service-content">
+                <h3 class="mb-2">پرداخت امن</h3>
+                <span class="font-light"
+                  >ما تمامی کارت های اعتباری را می پذیریم.</span
+                >
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- service section end -->
+
+
+
+
+{% endblock content %}

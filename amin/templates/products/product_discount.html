@@ -1,0 +1,31 @@
+    <section class="ratio2_1 banner-style-2">
+      <div class="container">
+        <div class="row gy-4">
+            {% for product in products %}
+          <div class="col-lg-4 col-md-6">
+            <div class="collection-banner p-bottom p-center text-center">
+              <a href="{% url "pro:product_detail" slug=product.slug %}" class="banner-img">
+                <img
+                  src="{{media_url}}{{product.image_name}}"
+                  class="bg-img blur-up lazyload"
+                  alt=""
+                />
+              </a>
+              <div class="banner-detail">
+                <a  onclick="add_to_favorite({{product.id}})" href="#" class="heart-wishlist">
+                  <i class="far fa-heart"></i>
+                </a>
+                <span class="font-dark-30">{{product.get_discount}}% <span>تخفیف</span></span>
+              </div>
+              <a href="{% url "pro:product_detail" slug=product.slug %}" class="contain-banner">
+                <div class="banner-content with-big">
+                  <h2 class="mb-2">{{product.product_name}}</h2>
+                  
+                </div>
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>

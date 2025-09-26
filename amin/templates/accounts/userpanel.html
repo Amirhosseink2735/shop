@@ -1,0 +1,109 @@
+{% extends "user_panel_template.html" %}
+
+
+
+{% block content %}
+
+              <div class="tab-pane fade show active" id="dash">
+                <div class="dashboard-right">
+                  <div class="dashboard">
+                    <div class="page-title title title1 title-effect">
+                      <h2>داشبورد من</h2>
+                    </div>
+                    <div class="welcome-msg">
+                      <h6 class="font-light">
+                        سلام, <span>{{user_info.name}}!</span>
+                      </h6>
+                      <p class="font-light">
+                        از داشبورد حساب خود می توانید یک عکس فوری از فعالیت اخیر
+                        حساب خود را مشاهده کرده و اطلاعات حساب خود را به روز
+                        کنید. برای مشاهده یا ویرایش اطلاعات پیوند زیر را انتخاب
+                        کنید.
+                      </p>
+                    </div>
+
+                    <div class="order-box-contain my-4">
+                      <div class="row g-4">
+                        <div class="col-lg-4 col-sm-6">
+                          <div class="order-box">
+                            <div class="order-box-image">
+                              <img
+                                src="{{media_url}}images/svg/box.png"
+                                class="img-fluid blur-up lazyload"
+                                alt=""
+                              />
+                            </div>
+                            <div class="order-box-contain">
+                              <img
+                                src="{{media_url}}images/svg/box1.png"
+                                class="img-fluid blur-up lazyload"
+                                alt=""
+                              />
+                              <div>
+                                <h5 class="font-light">مجموع سفارشات</h5>
+                                {% if user_info.order_count %}
+                                <h3>{{user_info.order_count}}</h3>
+                                {% else %}
+                                <h3>0</h3>
+
+                                {% endif %}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                          <div class="order-box">
+                            <div class="order-box-image">
+                              <img
+                                src="{{media_url}}images/svg/wishlist.png"
+                                class="img-fluid blur-up lazyload"
+                                alt=""
+                              />
+                            </div>
+                            <div class="order-box-contain">
+                              <img
+                                src="{{media_url}}images/svg/wishlist1.png"
+                                class="img-fluid blur-up lazyload"
+                                alt=""
+                              />
+                              <div>
+                                <h5 class="font-light">علاقه مندیها</h5>
+                                <h3>{{user_info.favorite_count}}</h3>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="box-account box-info">
+                      <div class="box-head">
+                        <h3>اطلاعات حساب</h3>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="box">
+                            <div class="box-title">
+                              <h4>اطلاعات مخاطب</h4>
+                              <a href="#">ویرایش</a>
+                            </div>
+                            <div class="box-content">
+                              <h6 class="font-light">{{user_info.name}} {{user_info.family}}</h6>
+                              <h6 class="font-light">{{user.email}}</h6>
+                              <a href="{% url "accounts:forgot" %}">تغییر رمز عبور</a>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+
+{% endblock content %}

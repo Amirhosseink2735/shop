@@ -1,0 +1,51 @@
+{% extends "user_panel_template.html" %}
+{% load humanize %}
+
+
+{% block content %}
+                <div class="box-head mb-3">
+                  <h3>سفارش من</h3>
+                </div>
+                <div class="table-responsive">
+                  <table class="table cart-table">
+                    <thead>
+                      <tr class="table-head">
+
+                        <th scope="col">کد سفارش</th>
+                        <th scope="col">جزئیات محصول</th>
+                        <th scope="col">قیمت</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for order in orders %}
+                      <tr>
+
+                        <td>
+                          <p class="mt-0">{{order.id}}</p>
+                        </td>
+                        <td>
+                          <p class="fs-6 m-0">{{order.get_name_of_products}}</p>
+                        </td>
+
+                        <td>
+                          <p class="theme-color fs-6">{{order.get_order_total_price|intcomma}} ت</p>
+                        </td>
+
+                      </tr>
+                      {% endfor %}
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+
+
+
+
+{% endblock content %}
+
+
+
+

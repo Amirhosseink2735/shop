@@ -1,0 +1,26 @@
+                      <ul class="category-list">
+                        {% for group in products_group  %}
+                        <li>
+                          <div class="form-check ps-0 custome-form-check">
+                          {% comment "" %}<input
+                              class="checkbox_animated check-it"
+                              type="checkbox"
+                              id="flexCheckDefault10"
+                            />{% endcomment %}
+                            <a
+                              href=""
+                              class="form-check-label"
+                              for="flexCheckDefault10"
+                              >{{group.group_title}}</a
+                            >
+                            <p class="font-light">({{group.products_of_group.all|length}})</p>
+                          </div>
+                        </li>
+                        {% endfor %}
+
+                      </ul>
+
+
+
+
+                      

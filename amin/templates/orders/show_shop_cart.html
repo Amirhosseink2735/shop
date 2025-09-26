@@ -1,0 +1,83 @@
+       {% load humanize %}     
+        <div  class="col-sm-12 table-responsive mt-4">
+            <table class="table cart-table">
+              <thead>
+                <tr class="table-head">
+                  <th scope="col">عکس</th>
+                  <th scope="col">نام محصول</th>
+                  <th scope="col">قیمت</th>
+                  <th scope="col">تعداد</th>
+                  <th scope="col">اقدام</th>
+                  <th scope="col">مجموع</th>
+                </tr>
+              </thead>
+              {% for cart in shop_cart %}
+              <tbody>
+                <tr>
+                  <td>
+                    <a href="product-left-sidebar.html">
+                      <img
+                        src="{{media_url}}{{cart.product.image_name}}"
+                        class="blur-up lazyload"
+                        alt=""
+                      />
+                    </a>
+                  </td>
+                  <td>
+                    <a href="product-left-sidebar.html">{{cart.product.product_name}}</a>
+                    <div class="mobile-cart-content row">
+                      <div class="col">
+                        <div class="qty-box">
+                         
+                          <div class="input-group">
+                            
+                            <input
+                              type="text"
+                              name="quantity"
+                              class="form-control input-number"
+                              value="{{cart.qty}}"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <h2>63,000 ت</h2>
+                      </div>
+                      <div class="col">
+                        <h2 class="td-color">
+                          <a >
+                            <i class="fas fa-times"  ></i>
+                          </a>
+                        </h2>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <h2>{{cart.product.price|intcomma}} تومان </h2>
+                  </td>
+                  <td>
+                    <div class="qty-box">
+                      <div class="input-group">
+                        <input
+                          type="number"
+                          name="quantity"
+                          class="form-control input-number"
+                          value="{{cart.qty}}"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#" onclick="deleteshopcart({{cart.product.id}})">
+                      <i class="fas fa-times"></i>
+                    </a>
+                  </td>
+                  <td>
+                    <h2 class="td-color">{{cart.total_price|intcomma}} ت</h2>
+                  </td>
+                </tr>
+              </tbody>
+              {% endfor %}
+
+            </table>
+        </div>

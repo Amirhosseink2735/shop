@@ -1,0 +1,231 @@
+{% extends "main_template.html" %}
+
+{% load humanize %}
+
+
+{% block content %}   
+
+
+    <!-- mobile fix menu start -->
+    <div class="mobile-menu d-sm-none">
+      <ul>
+        <li>
+          <a href="index.html">
+            <i data-feather="home"></i>
+            <span>خانه</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class="toggle-category">
+            <i data-feather="align-justify"></i>
+            <span>دسته بندی</span>
+          </a>
+        </li>
+        <li>
+          <a href="cart.html">
+            <i data-feather="shopping-bag"></i>
+            <span>سبد خرید</span>
+          </a>
+        </li>
+        <li>
+          <a href="wishlist.html">
+            <i data-feather="heart"></i>
+            <span>علاقه مندیها</span>
+          </a>
+        </li>
+        <li>
+          <a href="user-dashboard.html">
+            <i data-feather="user"></i>
+            <span>حساب</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- mobile fix menu end -->
+
+    <!-- Breadcrumb section start -->
+    <section class="breadcrumb-section section-b-space">
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h3>تسویه</h3>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="index.html">
+                    <i class="fas fa-home"></i>
+                  </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  تسویه
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Breadcrumb section end -->
+
+    <!-- Cart Section Start -->
+    <section class="section-b-space">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <h3 class="mb-3">آدرس صورتحساب</h3>
+            <form class="needs-validation" action="" method="post">
+              {% csrf_token %}
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <label for="fname" class="form-label">نام کوچک</label>
+                  {{form.name}}
+                </div>
+                <div class="col-md-6">
+                  <label for="lname" class="form-label">نام خانوادگی</label>
+                  {{form.family}}
+                </div>
+                <div class="col-md-6">
+                  <label for="lname" class="form-label">نام کاربری</label>
+                  <div class="input-group">
+                    {{form.mobile_number}}
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email" class="form-label">آدرس ایمیل</label>
+                  {{form.email}}
+                </div>
+
+                <div class="col-md-3">
+                  <label for="zip" class="form-label">کد پستی</label>
+                  {{form.code_posti}}
+                </div>
+              </div>
+
+              <hr class="my-lg-5 my-4" />
+
+              <h3 class="mb-3">پرداخت</h3>
+
+              <div class="d-block my-3">
+                <div class="form-check custome-radio-box">
+                  {{form.payment_type}}
+
+                </div>
+
+
+              </div>
+
+
+              <button class="btn btn-solid-default mt-4" type="submit">
+                ادامه برای تسویه
+              </button>
+            </form>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="your-cart-box">
+              <h3 class="mb-3 d-flex text-capitalize">
+                سبد خرید شما<span
+                  class="badge bg-theme new-badge rounded-pill ms-auto bg-dark"
+                  >3</span
+                >
+              </h3>
+              <ul class="list-group mb-3">
+                {% for item in shop_cart %}
+                <li
+                  class="list-group-item d-flex justify-content-between lh-condensed"
+                >
+                  <div>
+                    <h6 class="my-0">{{item.product.product_name}}</h6>
+                    <small>{{item.product.s_description}}</small>
+                  </div>
+                  <span>{{item.product.price|intcomma}}</span>
+                </li>
+                {% endfor %}
+          
+                <li
+                  class="list-group-item d-flex lh-condensed justify-content-between"
+                >
+                  <span class="fw-bold">مجموع (تومان) </span>
+                  <strong>{{jame_kol|intcomma}}</strong>
+                </li>
+              </ul>
+
+                            <div class="col-lg-4 col-sm-6">
+                <div class="promo-section">
+                  <form action="{% url "orders:get_copuncode" order_id=order.id %}" method="post" class="row g-3">
+                    {% csrf_token %}
+                    <div  class="col-7">
+                      {{copun_form.copoun_code}}
+                    </div>
+                    <div class="col-5">
+                      <button type="submit" class="btn btn-solid-default rounded btn">
+                        اعمال تخفیف
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Cart Section End -->
+
+    <!-- Subscribe Section Start -->
+    <section class="subscribe-section section-b-space">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-6">
+            <div class="subscribe-details">
+              <h2 class="mb-3">اخبار ما را دنبال کنید</h2>
+              <h6 class="font-light">
+                ما را دنبال کنید وخبرنامه های ما را دریافت کنید تا از اخبار جدید
+                و محصولات فوقالعاده خبردار شوید.
+              </h6>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-md-0 mt-3">
+            <div class="subsribe-input">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control subscribe-input"
+                  placeholder="آدرس"
+                  ایمیل
+                  شما
+                />
+                <button class="btn btn-solid-default" type="button">
+                  ارسال
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Subscribe Section End -->
+
+
+
+
+{% endblock content %}   
+
+
+
+
+

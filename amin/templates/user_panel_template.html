@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<html lang="fa" dir="rtl">
+  <head>
+    <link rel="manifest" href="{% static "manifest.json" %}" />
+    <link rel="icon" href="{% static "assets/images/favicon/2.png" %}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{% static "assets/images/favicon/2.png" %}" />
+    <meta name="theme-color" content="#e22454" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Voxo" />
+    <meta
+      name="msapplication-TileImage"
+      content="{% static "assets/images/favicon/2.png" %}"
+    />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Voxo" />
+    <meta name="keywords" content="Voxo" />
+    <meta name="author" content="Voxo" />
+    <link rel="icon" href="{% static "assets/images/favicon/2.png" %}" type="image/x-icon" />
+    <title>Index</title>
+
+    <!-- Font -->
+    <link rel="stylesheet" type="text/css" href="{% static "assets/css/fonts.cs" %}s" />
+
+    <!-- bootstrap css -->
+    <link
+      id="rtl-link"
+      rel="stylesheet"
+      type="text/css"
+      href="{% static "assets/css/vendors/bootstrap.rtl.css" %}"
+    />
+
+    <!-- font-awesome css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static "assets/css/vendors/font-awesome.css" %}"
+    />
+
+    <!-- feather icon css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static "assets/css/vendors/feather-icon.css" %}"
+    />
+
+    <!-- animation css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static "assets/css/vendors/animate.css" %}"
+    />
+
+    <!-- slick css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static "assets/css/vendors/slick/slick.css" %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static "assets/css/vendors/slick/slick-theme.css" %}"
+    />
+
+    <!-- Theme css -->
+    <link
+      id="color-link"
+      rel="stylesheet"
+      type="text/css"
+      href="{% static "assets/css/demo2.css" %}"
+    />
+    <script>
+      function addshopcart(product_id,qty) {
+            if(qty===0){
+              qty=$("#product_input").val();
+              }
+            $.ajax({
+            type:"GET",
+            url:"/orders/add_to_shopcart/",
+            data:{
+              product_id:product_id,
+              qty:qty
+            },
+            success: function(res) {
+              alert("محصول به سبد خرید اضافه شد");
+              
+                
+
+            },
+    });
+    }
+      
+    </script>
+
+
+  </head>
+<body>
+    {% include "main/partials/header.html" %}
+    {% include "partials/messages.html" %}
+        <div class="mobile-menu d-sm-none">
+      <ul>
+        <li>
+          <a href="index.html">
+            <i data-feather="home"></i>
+            <span>خانه</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class="toggle-category">
+            <i data-feather="align-justify"></i>
+            <span>دسته بندی</span>
+          </a>
+        </li>
+        <li>
+          <a href="cart.html">
+            <i data-feather="shopping-bag"></i>
+            <span>سبد خرید</span>
+          </a>
+        </li>
+        <li>
+          <a href="wishlist.html">
+            <i data-feather="heart"></i>
+            <span>علاقه مندیها</span>
+          </a>
+        </li>
+        <li>
+          <a href="user-dashboard.html" class="active">
+            <i data-feather="user"></i>
+            <span>حساب</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- mobile fix menu end -->
+
+    <!-- Breadcrumb section start -->
+    <section class="breadcrumb-section section-b-space">
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h3>داشبورد کاربر</h3>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="index.html">
+                    <i class="fas fa-home"></i>
+                  </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  داشبورد کاربر
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Breadcrumb section end -->
+
+    <!-- user dashboard section start -->
+    <section class="section-b-space">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <ul
+              class="nav nav-tabs custome-nav-tabs flex-column category-option"
+              id="myTab"
+            >
+              <li class="nav-item mb-2">
+     
+                <a  href="{% url 'accounts:userpanel' %}">
+                  <i class="fas fa-angle-right"></i>داشبورد
+                </a>
+                
+              </li>
+              
+
+              <li  class="nav-item mb-2">
+
+                
+                <a  href="{% url 'accounts:last_orders' %}">
+                  <i   class="fas fa-angle-right"></i>سفارشات
+                </a>
+                
+              </li>
+
+              <li class="nav-item mb-2">
+                  <a href="{% url "accounts:panel_favorite" %}">
+                    <i class="fas fa-angle-right"></i>علاقه مندیها
+                  </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{% url "accounts:security" %}">
+                  <i class="fas fa-angle-right"></i>امنیت
+                </a>
+              </li>
+            </ul>
+          </div>
+         <div class="col-lg-9">
+            <div class="filter-button dash-filter dashboard">
+              <button class="btn btn-solid-default btn-sm fw-bold filter-btn">
+                نمایش منو
+              </button>
+            </div>
+
+            <div class="tab-content" id="myTabContent">
+          {% block content %}
+          
+          {% endblock content %}
+          </div>
+        </div>
+
+
+
+        </div>
+      </div>
+    </section>
+    <!-- user dashboard section end -->
+
+
+  {% include "main/partials/footer.html" %}
+
+  
+
+  
+</body>
+    <!-- latest jquery-->
+    <script src="{% static "assets/js/jquery-3.5.1.min.js" %}"></script>
+
+    <!-- Bootstrap js-->
+    <script src="{% static "assets/js/bootstrap/bootstrap.bundle.min.js" %}"></script>
+
+    <!-- feather icon js-->
+    <script src="{% static "assets/js/feather/feather.min.js" %}"></script>
+
+    <!-- lazyload js-->
+    <script src="{% static "assets/js/lazysizes.min.js" %}"></script>
+
+    <!-- Slick js-->
+    <script src="{% static "assets/js/slick/slick.js" %}"></script>
+    <script src="{% static "assets/js/slick/slick-animation.min.js" %}"></script>
+    <script src="{% static "assets/js/slick/custom_slick.js" %}"></script>
+
+    <!-- newsletter js -->
+    <script src="{% static "assets/js/newsletter.js" %}"></script>
+
+    <!-- add to cart modal resize -->
+    <script src="{% static "assets/js/cart_modal_resize.js" %}"></script>
+
+    <!-- Add To Home js -->
+    <script src="{% static "assets/js/pwa.js" %}"></script>
+
+    <!-- add to cart modal resize -->
+    <script src="{% static "assets/js/cart_modal_resize.js" %}"></script>
+
+    <!-- feather icon js-->
+    <script src="{% static "assets/js/timer1.js" %}"></script>
+
+    <!-- notify js -->
+    <script src="{% static "assets/js/bootstrap/bootstrap-notify.min.js" %}"></script>
+
+    <!-- script js -->
+    <script src="{% static "assets/js/theme-setting.js" %}"></script>
+    <script src="{% static "assets/js/script.js" %}"></script>
+
+
+</html>
