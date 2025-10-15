@@ -31,7 +31,7 @@
 ### 1. کلون کردن پروژه  
 ```bash
 git clone https://github.com/Amirhosseink2735/shop.git
-cd shop
+cd amin
  3. ساخت جداول دیتابیس
 python manage.py makemigrations
 python manage.py migrate
